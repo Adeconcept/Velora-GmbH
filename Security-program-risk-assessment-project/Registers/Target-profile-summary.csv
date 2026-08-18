@@ -1,0 +1,7 @@
+Function,Current average,Target average,Main gap
+Govern,1.0,3.0,"Policy, ownership, and risk process"
+Identify,1.0,3.0,Inventories and vulnerability lifecycle
+Protect,1.5,3.0,"MFA,baselines, and backup testing"
+Detect,1.3,3.0,Coverage and cloud-log review
+Respond,1.5,3.0,Untested response governance
+Recover,0.0,3.0,No restore verification

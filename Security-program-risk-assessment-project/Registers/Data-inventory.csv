@@ -1,0 +1,7 @@
+Data_ID,Data_Set,Classification,Data_Subject,Main_Assets,Purpose,Access_Roles,Retention_Assumption,External_Party,Evidence_Basis
+DAT-001,Customer identity and contact data,Restricted,Customers,"AST-001, AST-002",Authentication and user account management,"Support, authorized engineering",To be validated with legal and business owner,"AWS, Zendesk",Simulated company dossier
+DAT-002,Orders and payment references,Restricted,Customers,"AST-001, AST-002, AST-010",Transaction processing and checkout history,"Finance, support",To be validated with legal and business owner,"AWS, Stripe",Simulated company dossier
+DAT-003,Employee and payroll records,Restricted,Employees,AST-012,HR administration and compensation management,"People team, finance",To be validated with legal and business owner,Personio,Simulated company dossier
+DAT-004,Source code and deployment configuration,Confidential,System / Architecture,AST-009,Software version control and infrastructure definition,Engineering,To be validated with legal and business owner,GitHub,Simulated company dossier
+DAT-005,Support tickets,Confidential,Customers,AST-011,Customer service tracking and issue resolution,"Support, limited engineering",To be validated with legal and business owner,Zendesk,Simulated company dossier
+DAT-006,Security and audit logs,Confidential,System / Architecture,"AST-013, AST-014",Security event monitoring and compliance tracking,"IT Manager, authorized analyst",To be validated with legal and business owner,"AWS, Hosted Splunk",Simulated company dossier
