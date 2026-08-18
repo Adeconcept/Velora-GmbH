@@ -8,8 +8,8 @@ Every artifact evaluated or referenced must be labeled with exactly one of the f
 
 | Label | Meaning | Acceptable Example |
 | :--- | :--- | :--- |
-| **Observed** | Seen directly in my own lab or a supplied fictional artifact | Security program risk assessment CSV row or my controlled restore result |
-| **Tested** | I performed a controlled procedure and recorded expected versus actual result | Formula recalculation or lab restore test |
+| **Observed** | Seen directly in your own lab or a supplied fictional artifact | Security program risk assessment CSV row or my controlled restore result |
+| **Tested** | You performed a controlled procedure and recorded expected versus actual result | Formula recalculation or lab restore test |
 | **Simulated** | Created as fictional evidence for the Velora scenario | Fictional MFA summary |
 | **Assumed** | A fact needed for the exercise but not proven | Analytics uses user-level event data |
 | **Recommended** | A future action, not an implemented control | Enforce MFA for all users |
