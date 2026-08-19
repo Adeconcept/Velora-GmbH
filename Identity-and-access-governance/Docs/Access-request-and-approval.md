@@ -9,39 +9,39 @@ Every ad-hoc access modification must generate a tracking ticket containing this
 ```text
 # ACCESS REQUEST LOG
 
-### 1. Request Details
-* Request ID: [Auto-generated ticket number]
-* Request Date: [YYYY-MM-DD]
-* Requester Name: [Full Name]
-* Identity ID: [USR-XXX / GST-XXX]
-* Current Business Role: [RBAC Matrix String]
-* Target System & Permission Requested: [Asset ID & Code]
-* Justified Business Reason: [Detailed text block]
-* Requested Activation Date: [YYYY-MM-DD]
-* Requested Expiry / Review Date: [YYYY-MM-DD]
-* Scope Elevation Check: Is access privileged, approval-capable, or restricted-data access? [Yes / No]
-* Related Ticket or Change Management ID: [CM-XXX]
+1. Request Details
+- Request ID: [Auto-generated ticket number]
+- Request Date: [YYYY-MM-DD]
+- Requester Name: [Full Name]
+- Identity ID: [USR-XXX / GST-XXX]
+- Current Business Role: [RBAC Matrix String]
+- Target System & Permission Requested: [Asset ID & Code]
+- Justified Business Reason: [Detailed text block]
+- Requested Activation Date: [YYYY-MM-DD]
+- Requested Expiry / Review Date: [YYYY-MM-DD]
+- Scope Elevation Check: Is access privileged, approval-capable, or restricted-data access? [Yes / No]
+- Related Ticket or Change Management ID: [CM-XXX]
 
-### 2. Required Verification Checks
-* Does the RBAC matrix already allow this access as a birthright? [Yes / No]
-* Is the Principle of Least Privilege applied to this requested scope? [Yes / No]
-* Does the requested scope conflict with another active permission held by the user? [Yes / No]
-* Is specialized security training, elevated MFA, compliant device, or explicit location gating required? [Yes / No]
-* Is a time-limited or just-in-time (JIT) assignment possible for this task? [Yes / No]
-* Is a formal corporate policy exception required? [Yes / No]
+2. Required Verification Checks
+- Does the RBAC matrix already allow this access as a birthright? [Yes / No]
+- Is the Principle of Least Privilege applied to this requested scope? [Yes / No]
+- Does the requested scope conflict with another active permission held by the user? [Yes / No]
+- Is specialized security training, elevated MFA, compliant device, or explicit location gating required? [Yes / No]
+- Is a time-limited or just-in-time (JIT) assignment possible for this task? [Yes / No]
+- Is a formal corporate policy exception required? [Yes / No]
 
-### 3. Approvals & Sign-Offs
-* Line Manager Decision & Business Reason: [Approved / Denied + Text]
-* System Owner Decision & Technical Reason: [Approved / Denied + Text]
-* Security / IT Compliance Review (When Required): [Passed / Failed + Text]
-* Provisioned By: [IT Support ID + Timestamp]
-* Validated By: [Independent IT Auditor ID + Timestamp]
+3. Approvals & Sign-Offs
+- Line Manager Decision & Business Reason: [Approved / Denied + Text]
+- System Owner Decision & Technical Reason: [Approved / Denied + Text]
+- Security / IT Compliance Review (When Required): [Passed / Failed + Text]
+- Provisioned By: [IT Support ID + Timestamp]
+- Validated By: [Independent IT Auditor ID + Timestamp]
 
-### 4. Closure Metrics
-* Actual Permission Granted: [System String]
-* Provisioning Log Reference Evidence: [Directory Event Hash]
-* Technical Expiry Configured: [Yes / No / Not Supported]
-* Scheduled Next Review Date: [YYYY-MM-DD]
+4. Closure Metrics
+- Actual Permission Granted: [System String]
+- Provisioning Log Reference Evidence: [Directory Event Hash]
+- Technical Expiry Configured: [Yes / No / Not Supported]
+- Scheduled Next Review Date: [YYYY-MM-DD]
 ```
 
 ## Mandatory Governance Decision Rules
