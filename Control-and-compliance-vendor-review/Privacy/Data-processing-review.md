@@ -27,7 +27,7 @@ The table below outlines the compliance readiness review across key GDPR managem
 
 | Topic | Review Question | Evidence | Result | Action |
 | :--- | :--- | :--- | :--- | :--- |
-| **Accountability** | Are processing decisions, owners, risks, and safeguards documented? | Week 17 inventories and Week 18 review | Partial | Approve owners and establish a recurring governance review cycle |
+| **Accountability** | Are processing decisions, owners, risks, and safeguards documented? | Security Program risk assessment inventories and Compliance review | Partial | Approve owners and establish a recurring governance review cycle |
 | **Data minimization** | Is only necessary data collected for each purpose? | No field-level collection specification available | Not Tested | Create a detailed field-level data inventory for analytics and support channels |
 | **Storage limitation** | Are retention periods and deletion triggers approved? | EV-011 | Fail | Formally validate and document retention and deletion rules across six data sets |
 | **Security of processing** | Are access, encryption, resilience, restore, and testing proportionate to risk? | EV-004, EV-006, EV-008, EV-010 | Partial | Complete planned actions for MFA enforcement, server patching, monitoring, and restore testing |
