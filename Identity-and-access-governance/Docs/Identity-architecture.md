@@ -2,16 +2,9 @@
 
 This document maps the flow of identity data, authentication signals, and governance reviews across the Velora Commerce GmbH enterprise ecosystem.
 
-```mermaid
-flowchart TD
-    A["Personio (assumed HR source)"] --> B["Microsoft Entra ID"]
-    B --> C["Microsoft 365 and SaaS"]
-    B --> D["GitHub, AWS and admin apps"]
-    C --> E["Logs and access-review evidence"]
-    D --> E
-    E --> F["Managers and system owners"]
-    F --> B
-```
+## Architechture
+
+![Architecture](Screenshots/01_Identity_architechture.png.png)
 
 ## Architectural Component Roles and Audit Requirements
 
