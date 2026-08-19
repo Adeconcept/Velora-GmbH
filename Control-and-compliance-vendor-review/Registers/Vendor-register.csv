@@ -1,1 +1,9 @@
+Vendor_ID,Vendor,Service,Related_Assets,Data_Sensitivity,Business_Criticality,Access_Integration,Inherent_Score,Review_Priority,Owner,Assurance_Status,Last_Review,Next_Review,Decision,Evidence_Refs,Evidence_Label
+"VEN-001","AWS","Cloud Infrastructure Hosting","AST-003, AST-005, AST-013","4","4","4","12","Critical","CTO","Not formally reviewed","","2026-11-14","Review required","EV-012","Simulated"
+"VEN-002","Microsoft","Enterprise Productivity & Identity","AST-006, AST-007, AST-017","4","4","4","12","Critical","IT Manager","Not formally reviewed","","2026-11-14","Review required","EV-012","Simulated"
+"VEN-003","Stripe","Payment Processing Gateway","AST-010","4","4","3","11","Critical","CFO","Not formally reviewed","","2026-11-14","Review required","EV-012","Simulated"
+"VEN-004","Zendesk","Customer Support Ticketing","AST-011","3","3","3","9","High","Support Lead","Not formally reviewed","","2026-11-14","Review required","EV-012","Simulated"
+"VEN-005","Personio","HR and Payroll Management","AST-012","4","3","3","10","High","Head of People","Not formally reviewed","","2026-11-14","Review required","EV-012","Simulated"
+"VEN-006","GitHub","Source Control & CI/CD Pipelines","AST-009","3","3","4","10","High","Engineering Lead","Not formally reviewed","","2026-11-14","Review required","EV-012","Simulated"
+"VEN-007","Analytics Provider, fictional","Product Usage & Behavioral Analytics","AST-018","3","2","3","8","Medium","Head of Product","Not formally reviewed","","2026-11-14","Conditional hold","EV-012","Simulated"
 
