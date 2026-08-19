@@ -25,4 +25,11 @@ Identity is a shared dependency for employee productivity, customer support, dev
 *   **100%** of guests have a named sponsor and a future end date or are disabled.
 *   **100%** of privileged identities reviewed quarterly.
 *   **100%** of service identities mapped to human owners with interactive sign-in blocked.
+*   All mover and separation-of-duties exceptions resolved or formally accepted.
+
+---
+
+## Limitation
+This is a simulated portfolio assessment using synthetic identity records. It is not a real access certification or production Microsoft Entra review.
+
 
