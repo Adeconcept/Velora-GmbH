@@ -4,7 +4,7 @@ This document maps the flow of identity data, authentication signals, and govern
 
 ```mermaid
 flowchart TD
-    A["Personio, assumed HR source"] --> B["Microsoft Entra ID"]
+    A["Personio (assumed HR source)"] --> B["Microsoft Entra ID"]
     B --> C["Microsoft 365 and SaaS"]
     B --> D["GitHub, AWS and admin apps"]
     C --> E["Logs and access-review evidence"]
