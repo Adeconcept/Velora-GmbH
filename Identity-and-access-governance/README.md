@@ -44,3 +44,15 @@ IAM, Microsoft Entra concepts, RBAC, least privilege, MFA governance, joiner-mov
 ## Limitations
 Every identity and result is fictional. No real tenant, employee, vendor, or production system was accessed or changed.
 
+
+---
+
+## Evidence
+
+![Powerrshell result](https://github.com/Adeconcept/Velora-GmbH/blob/7c1e4b549bfdefc16eaff918ea2dd019762f8515/Identity-and-access-governance/Evidence/Screenshots/02-powershell-review-result.png)
+*Figure 1.  PowerShell review of 25 synthetic identities producing 24 automated exception rows across leaver, MFA, guest, service, stale, and privileged-access tests.*
+
+
+![Result](https://github.com/Adeconcept/Velora-GmbH/blob/4c536093573c6d84a58503abc327903972614d5a/Identity-and-access-governance/Evidence/Screenshots/03-iam-results-and-remediation.png)
+*Figure 2. IAM exception and severity summary showing why an enabled leaver receives immediate priority even though incomplete MFA produces more sample rows.*
+
