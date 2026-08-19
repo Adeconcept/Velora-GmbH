@@ -1,1 +1,8 @@
+Identity_Type,Population_Count,Sample_Count,Sample_Coverage,Selection_Method,Risk_Rationale,Evidence_Ref,Evidence_Label
+"Active privileged workforce","4","4","100.0%","Select all","Highest administrative impact","EV-AIM-002","Simulated"
+"Active standard workforce","56","10","17.9%","Representative risk-based sample","Validate departments, movers, MFA, stale access, and conflicting permissions","EV-IAM-001, EV-IAM-003, EV-IAM-004","Simulated"
+"Departed workforce","2","2","100.0%","Select all","Leaver failure can leave unauthorized access","EV-IAM-001, EV-IAM-002","Simulated"
+"Service identities","4","4","100.0%","Select all","Non-human access, secrets, ownership, and interactive sign-in risk","EV-IAM-002, EV-IAM-004","Simulated"
+"Guest identities","5","5","100.0%","Select all","External sponsorship and expiry risk","EV-IAM-002, EV-IAM-004","Simulated"
+"Total","71","25","35.2%","Risk-based sample","Covers every high-risk identity category plus standard users","EV-IAM-002","Simulated"
 
