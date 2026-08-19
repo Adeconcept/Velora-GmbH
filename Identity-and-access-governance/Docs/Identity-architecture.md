@@ -4,7 +4,7 @@ This document maps the flow of identity data, authentication signals, and govern
 
 ## Architechture
 
-![Architecture](Screenshots/01_Identity_architechture.png.png)
+![Architecture](https://github.com/Adeconcept/Velora-GmbH/blob/459c4c334b8231a1bc999044dd37cf10cb295f2a/Identity-and-access-governance/Evidence/Screenshots/01_Identity_architechture.png)
 
 ## Architectural Component Roles and Audit Requirements
 
