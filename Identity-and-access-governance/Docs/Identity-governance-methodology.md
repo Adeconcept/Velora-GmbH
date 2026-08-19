@@ -24,3 +24,30 @@ The access review relies on nine repeatable test cases to identify identity anom
 | **IAM-T07** | Privileged access review | Completed within 90 days | Review privilege and remove unnecessary standing access |
 | **IAM-T08** | Mover role comparison | Current access matches new role | Remove former-role access and validate new role |
 | **IAM-T09** | Separation of duties | No unapproved create-and-approve conflict | Remove one permission or add independent approval control |
+
+---
+
+## Finding Closure Protocol
+
+A finding can close only when:
+1. The corrective action is implemented.
+2. Completion evidence is retained.
+3. The original failing test is rerun.
+4. The retest passes or an approved exception exists.
+5. The related residual risk is reassessed.
+6. The reviewer records the closure date and decision.
+
+---
+
+### Retest Verification Specifications
+
+| Finding | Retest Verification Steps |
+| :--- | :--- |
+| **IAM-F-001** | Confirm USR-005 Disabled, sessions revoked, and all in-scope applications checked. |
+| **IAM-F-002** | Recalculate enforced active workforce coverage, expected 60 ÷ 60 = 100%. |
+| **IAM-F-003** | Confirm GST-002 and GST-004 Disabled or have sponsor-approved future end dates. |
+| **IAM-F-004** | Confirm SVC-001 and SVC-004 interactive sign-in Blocked and SVC-004 has an owner. |
+| **IAM-F-005** | Compare USR-007 to ROLE-009, expected no Zendesk Admin. |
+| **IAM-F-006** | Confirm USR-008 no longer holds both conflicting capabilities without independent control. |
+| **IAM-F-007** | Confirm all four privileged identities have a current review and approved target role. |
+
