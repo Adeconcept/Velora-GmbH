@@ -25,3 +25,43 @@ A finding is not closed when someone says the action is complete. The named vali
 ## Limitation
 All evidence and conclusions are fictional and created for portfolio learning. This is not an audit opinion, legal opinion, or vendor rating.
 
+---
+
+# Selected Control Assessment Visualizations
+
+This dashboard presents the numerical distribution of our 15 selected control ratings alongside our immediate critical remediation targets.
+
+---
+
+## 📊 Summary Dashboard
+
+| Selected Control Assessment Results | Count | Visual Distribution | | High-Priority Remediation Targets |
+| :--- | :---: | :--- | :---: | :--- |
+| **Pass** | **1** | `██░░░░░░░░░░░░░░░░░░░░` (6.7%) | | **Critical Finding F-005**<br>Ubuntu server patching lacks approved targets and automated validation telemetry. |
+| **Partial** | **7** | `██████████████░░░░░░░░░` (46.7%) | | **Critical Finding F-009**<br>Backup restoration capabilities, data integrity, and recovery timelines are completely unverified. |
+| **Fail** | **6** | `████████████░░░░░░░░░░░` (40.0%) | | |
+| **Not Tested** | **1** | `██░░░░░░░░░░░░░░░░░░░░` (6.7%) | | |
+
+---
+
+## 🔍 Visual Chart Breakdown
+
+Below is the horizontal breakdown of the **Selected Control Assessment Results** for easy presentation scanning:
+
+*   **Pass:** 
+    `█` **1**
+*   **Partial:** 
+    `███████` **7**
+*   **Fail:** 
+    `██████` **6**
+*   **Not Tested:** 
+    `█` **1**
+
+> [!NOTE]
+> **Chart Note:** Neutral gray/blue block elements (`█`) are utilized intentionally rather than green indicators to preserve compliance objectivity and avoid false assumptions of absolute security certification.
+
+---
+
+## 🛡️ Retesting Metric Rule
+Every open action item within the accompanying **Critical Remediation Targets** column must be checked using a binary validation loop. A separate reviewer must verify that data restoration records (**F-009**) complete successfully beneath the 4-hour RTO window and that automated system logs (**F-005**) report zero unpatched flaws before either finding can be formally marked as **Closed**.
+
