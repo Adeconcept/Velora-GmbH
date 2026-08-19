@@ -1,6 +1,6 @@
 Evidence_ID,Evidence_Request,Requested_From,Request_Date,Due_Date,Status,Date_Received,Evidence_Type,Controls_Supported,Storage_Location,Limitation,Evidence_Label
 EV-001,Approved information-security policies and review history,COO,2026-08-17,2026-08-19,Not provided,,Policy,CTL-01,None,No approved policy set identified,Not provided
-EV-002,Current asset inventory with owners and criticality,IT Manager,2026-08-17,2026-08-19,Received,2026-08-19,Register,CTL-02,Security-program-risk-assessment-project/Registers/Asset-inventory.csv",None,Observed
+EV-002,Current asset inventory with owners and criticality,IT Manager,2026-08-17,2026-08-19,Received,2026-08-19,Register,CTL-02,Security-program-risk-assessment-project/Registers/Asset-inventory.csv,None,Observed
 EV-003,Current risk register and approved treatments,CTO,2026-08-17,2026-08-19,Received with limitation,2026-08-19,Register,CTL-03,docs/risk-register.csv,Week 17 register exists but formal executive management approval is simulated and not independently evidenced,Simulated
 EV-004,MFA coverage summary for active workforce identities,IT Manager,2026-08-17,2026-08-19,"Received, simulated",2026-08-19,Configuration summary,CTL-04,evidence/fictional-evidence/ev-004-mfa-coverage-summary.md,None,Simulated
 EV-005,Completed quarterly access review and exception record,IT Manager,2026-08-17,2026-08-19,Not provided,,Review record,CTL-05,None,No formal quarterly access entitlement review process exists,Not provided
