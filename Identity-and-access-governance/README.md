@@ -53,6 +53,8 @@ Every identity and result is fictional. No real tenant, employee, vendor, or pro
 *Figure 1.  PowerShell review of 25 synthetic identities producing 24 automated exception rows across leaver, MFA, guest, service, stale, and privileged-access tests.*
 
 
+
+
 ![Result](https://github.com/Adeconcept/Velora-GmbH/blob/4c536093573c6d84a58503abc327903972614d5a/Identity-and-access-governance/Evidence/Screenshots/03-iam-results-and-remediation.png)
 *Figure 2. IAM exception and severity summary showing why an enabled leaver receives immediate priority even though incomplete MFA produces more sample rows.*
 
