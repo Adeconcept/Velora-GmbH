@@ -4,6 +4,13 @@ This dashboard visualizes the data outputs from our Week 19 identity review, sep
 
 ---
 
+![Result](https://github.com/Adeconcept/Velora-GmbH/blob/4c536093573c6d84a58503abc327903972614d5a/Identity-and-access-governance/Evidence/Screenshots/03-iam-results-and-remediation.png)
+*Figure 1. IAM exception and severity summary showing why an enabled leaver receives immediate priority even though incomplete MFA produces more sample rows.*
+
+
+---
+
+
 ## 📊 Summary Configuration Table
 
 | Chart 1: Automated Exceptions by Test | Count | Visual Distribution | | Chart 2: IAM Findings by Severity | Count | Visual Bar |
@@ -17,47 +24,3 @@ This dashboard visualizes the data outputs from our Week 19 identity review, sep
 | **Service Owner** | 1 | `██░░░░░░░░░░░░░░░░░░░` (4.2%) | | | | |
 | *Total Automated Exceptions* | *24* | *(100.0%)* | | *Total Systemic Findings* | *10* | *(100.0%)* |
 
----
-
-## 🔍 Visual Chart 1: Automated IAM Exceptions by Test
-*(Horizontal Bar Layout)*
-
-*   **MFA Enforcement:** 
-    `██████████` **10**
-*   **Stale Identity:** 
-    `████` **4**
-*   **Privileged Review:** 
-    `████` **4**
-*   **Expired Guests:** 
-    `██` **2**
-*   **Service Interactive Sign-In:** 
-    `██` **2**
-*   **Enabled Leaver:** 
-    `█` **1**
-*   **Service Owner:** 
-    `█` **1**
-
----
-
-## 📈 Visual Chart 2: IAM Findings by Severity
-*(Vertical Column Simulation)*
-
-```text
-  Count ↑
-    8 ┼      █
-    7 ┼      █
-    6 ┼      █
-    5 ┼      █
-    4 ┼      █
-    3 ┼      █
-    2 ┼      █      █
-    1 ┼      █      █      █
-    0 ┴──────┴──────┴──────┴────────►
-          Critical High   Medium   Severity
-```
-
----
-
-## 🖼️ Saved Artifact Index
-*   **File Path:** `evidence/screenshots/06-iam-results-and-remediation.png`
-*   **Caption:** Figure 6. IAM exception and severity summary showing why an enabled leaver receives immediate priority even though incomplete MFA produces more sample rows.
