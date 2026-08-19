@@ -1,1 +1,13 @@
+Role_ID,Business_Role,M365,Entra_Admin,GitHub,AWS,Zendesk,Stripe,Personio,Splunk,Analytics,Customer_App_Admin,Role_Owner,Review_Frequency,Evidence_Label
+"ROLE-001","IT Manager","U","P","R","P","0","0","0","P","0","0","COO","Quarterly","Simulated"
+"ROLE-002","IT Support","U","""P, scoped user admin""","0","R","U","0","0","R","0","0","IT Manager","Quarterly","Simulated"
+"ROLE-003","CTO","U","R","R","A","0","0","0","R","R","R","CEO","Quarterly","Simulated"
+"ROLE-004","Engineering Lead","U","0","P","P","0","0","0","R","R","R","CTO","Quarterly","Simulated"
+"ROLE-005","Engineer","U","0","W","R","0","0","0","0","R","0","Engineering Lead","Semiannual","Simulated"
+"ROLE-006","Support Lead","U","0","0","0","P","R","0","R","R","P","COO","Quarterly","Simulated"
+"ROLE-007","Support Agent","U","0","0","0","U","0","0","0","0","U","Support Lead","Annual","Simulated"
+"ROLE-008","Finance Lead","U","0","0","0","0","A","0","R","0","0","CFO","Quarterly","Simulated"
+"ROLE-009","Finance Analyst","U","0","0","0","0","R","0","0","0","0","CFO","Semiannual","Simulated"
+"ROLE-010","People Operations","U","0","0","0","0","0","P","0","0","0","Head of People","Quarterly","Simulated"
+"ROLE-011","Marketing Specialist","U","0","0","0","0","0","0","0","W","0","Marketing Lead","Semiannual","Simulated"
 
