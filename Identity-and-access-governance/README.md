@@ -19,7 +19,7 @@ The fictional directory contained 71 objects. I selected all privileged workforc
 ## Key Results
 *   **71-object** population documented.
 *   **25** identities reviewed, representing **35.2%** risk-based coverage.
-*   **24** automated PowerShell exceptions executed.
+*   **27** automated PowerShell exceptions executed.
 *   **2** manual role and separation-of-duties exceptions documented.
 *   **26** total review rows generated.
 *   **10** IAM findings established: **1 Critical, 7 High, and 2 Medium**.
