@@ -7,3 +7,20 @@ The directory contained 71 in-scope objects [EV-IAM-002]. I selected 100% of pri
 
 This was a risk-based sample, not a statistical sample. It is appropriate for identifying high-risk exceptions in this fictional review but cannot prove that every unsampled standard identity is correctly configured.
 
+---
+
+## Access Review Test Specifications
+
+The access review relies on nine repeatable test cases to identify identity anomalies, dictate immediate operational decisions, and flag policy exceptions.
+
+| Test ID | Test | Expected State | Decision When Failed |
+| :--- | :--- | :--- | :--- |
+| **IAM-T01** | Departed workforce account status | Disabled | Disable immediately and investigate use after end date |
+| **IAM-T02** | Active workforce MFA | Enforced | Remediate through controlled MFA rollout |
+| **IAM-T03** | Guest end date | Future date or disabled | Remove or obtain sponsor-approved extension |
+| **IAM-T04** | Service owner | Named owner | Suspend or assign accountable owner |
+| **IAM-T05** | Service interactive sign-in | Blocked | Block or document time-limited technical exception |
+| **IAM-T06** | Stale enabled identity | Sign-in within 45 days or valid exception | Confirm need, disable, or extend with owner approval |
+| **IAM-T07** | Privileged access review | Completed within 90 days | Review privilege and remove unnecessary standing access |
+| **IAM-T08** | Mover role comparison | Current access matches new role | Remove former-role access and validate new role |
+| **IAM-T09** | Separation of duties | No unapproved create-and-approve conflict | Remove one permission or add independent approval control |
