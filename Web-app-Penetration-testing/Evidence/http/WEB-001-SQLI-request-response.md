@@ -10,7 +10,7 @@ The category input changes server-side query logic because it is not safely para
 
 ## Control request
 ```http
-GET /filter?category=Clothing%2c+shoes+and+accessories HTTP/2
+GET /filter?category=Clothing%2c+shoes+and+accessories HTTP//1.1
 Host: REDACTED_LAB_HOST
 Cookie: session=REDACTED_SESSION_STRING
 Sec-Ch-Ua: "Not;A=Brand";v="8", "Chromium";v="150"
