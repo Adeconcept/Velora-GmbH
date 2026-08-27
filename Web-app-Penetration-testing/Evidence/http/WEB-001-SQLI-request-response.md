@@ -33,7 +33,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9
 
 ## Control response summary
 - **Status**: 200 OK
-- **Length**: 8,034 bytes
+- **Length**: 4,931 bytes
 - **Released products visible**: Portable Hat (Truncated in visual buffer)
 - **Unreleased product visible**: No
 
@@ -62,7 +62,7 @@ Connection: keep-alive
 
 ## Test response summary
 - **Status**: 200 OK
-- **Length**: 15,392 bytes *(Reflective of additional inventory data generation)*
+- **Length**: 11,597 bytes *(Reflective of additional inventory data generation)*
 - **Additional products visible**: Dynamic extraction of full table content encompassing unreleased inventory lines outside the standard category definition block.
 - **Unreleased product visible**: Yes (Confirmed via live site alteration and application dashboard state shift to `is-solved`).
 
