@@ -1,34 +1,26 @@
 # Lab Setup
 
-## Scanner Host
-* **Device:** MacBook Pro M1 (2020)
-* **Operating System:** macOS Sequoia 15.6 (Observed)
-* **NESSUS console version:** Nessus Essentials v10.7.4 (#14) (Observed)
-* **Nessus plugin feed date:** 2026-08-25 (Observed)
+## Tester workstation
+- Device: MacBook M1
+- Operating system: Tahoe 26.6.2 
+- Burp edition: Community Edition
+- Burp version: v2026 7.3
+- Browser: Burp embedded browser
 
-## Target
-* **Asset ID:** LAB-UBU-01
-* **Velora reference:** AST-004 (Simulated Criticality)
-* **Platform:** Ubuntu Server ARM64 in UTM Virtualization Layer
-* **Ubuntu release:** Ubuntu 24.04 LTS (Noble Numbat) (Observed)
-* **Kernel baseline:** 6.8.0-40-generic aarch64 (Observed)
-* **Published address:** REDACTED_PRIVATE_IP (Observed Target Boundary)
+## Authorized targets
+| Alias | Platform | Hostname in public evidence | Authorization |
+|---|---|---|---|
+| LAB-WEB-01 | Web Security Academy | REDACTED_LAB_HOST | PortSwigger training lab |
+| LAB-WEB-02 | Web Security Academy | REDACTED_LAB_HOST | PortSwigger training lab |
+| LAB-WEB-03 | Web Security Academy | REDACTED_LAB_HOST | PortSwigger training lab |
+| LAB-WEB-04 | Web Security Academy | REDACTED_LAB_HOST | PortSwigger training lab |
 
-## Network
-* **UTM Network mode:** Shared Network (NAT Mode with local DHCP routing) (Observed)
-* **Reachability source:** Local host loopback path (Mac scanner host only)
-* **Authorized target count:** 1
+## Burp configuration
+- Native Apple Silicon installer: Yes
+- Embedded browser used: Yes
+- Exact active lab added to target scope: Yes
+- Out-of-scope traffic hidden from view: yes
+- Automated scanning used: No
 
-## Recovery
-* **Snapshot state identifier:** `Before-vulnerability-scan`
-* **UTM console tested:** Yes (Confirmed working keyboard and frame-buffer capture controls)
-* **Snapshot created date:** 2026-08-25 12:00:00 CEST (Observed)
-
-## Evidence Mapping References
-* **Precheck diagnostics:** [ubuntu-precheck.txt](../evidence/verification/ubuntu-precheck.txt)
-* **Scope definition document:** [scope-and-rules-of-engagement.md](scope-and-rules-of-engagement.md)
-* **Asset record entry:** [asset-scope.csv](../registers/asset-scope.csv)
-
-## Evidence Labels
-Observed technical values are marked **Observed**. Velora business criticality, asset assignment mapping, and corporate operational guidelines are marked **Simulated**.
-
+## Evidence boundary
+Temporary hostnames, session cookies, CSRF tokens, account identifiers, and unique lab IDs are removed from published evidence.
