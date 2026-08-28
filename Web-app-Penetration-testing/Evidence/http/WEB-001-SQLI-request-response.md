@@ -8,9 +8,9 @@
 
 ---
 
-![SQLI](https://github.com/Adeconcept/Velora-GmbH/blob/3fbbe6cf37af0a69ee8e92c4b63c5b03fdb5004b/Web-app-Penetration-testing/Evidence/Screenshots/01-Burp-scope-and-http-history.png)
+![SQLI](https://github.com/Adeconcept/Velora-GmbH/blob/17c7b322dfe55e666f05ee4a663728f0f6bf5ed1/Web-app-Penetration-testing/Evidence/Screenshots/00-SQL-Injection.png)
 
-*Figure 1. Burp scope and HTTP history.*
+*Figure 1. Burp Repeater comparison showing a normal category response and the authorized lab test returning only the search and not the injected search, with host and session data removed.*
 
 ---
 
