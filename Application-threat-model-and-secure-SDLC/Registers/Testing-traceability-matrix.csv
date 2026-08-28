@@ -1,0 +1,14 @@
+Threat_ID,Abuse_Case_ID,Requirement_ID,Test_ID,SDLC_Gate,Owner,Requirement_Status,Test_Status,Evidence_Ref,Traceability_Result,Evidence_Label
+TM-001,AC-002,SR-007,ST-007,G4,QA-Engineering,Recommended,Planned,registers/security-requirements.csv#SR-007,Complete,Recommended
+TM-002,AC-001,SR-005,ST-005,"G3, G4",QA-Engineering,Recommended,Planned,registers/security-requirements.csv#SR-005,Complete,Recommended
+TM-003,None,SR-010,ST-010,"G4, G6",Security-Analyst,Recommended,Planned,registers/security-requirements.csv#SR-010,Complete,Recommended
+TM-004,AC-004,SR-001,ST-001,"G3, G4",Development-Team,Recommended,Planned,evidence/http/WEB-001-sqli-request-response.md,Complete,Recommended
+TM-004,AC-004,SR-011,ST-001,"G4, G5",Database-Admin,Recommended,Planned,registers/security-requirements.csv#SR-011,Complete,Recommended
+TM-005,None,SR-012,ST-012,"G4, G5",Infrastructure-Lead,Recommended,Planned,registers/security-requirements.csv#SR-012,Complete,Recommended
+TM-006,AC-003,SR-003,ST-003,"G3, G4",Platform-Core-Team,Recommended,Planned,evidence/http/WEB-003-access-control-request-response.md,Complete,Recommended
+TM-007,AC-005,SR-002,ST-002,"G3, G4",UI-Engineering-Team,Recommended,Planned,evidence/http/WEB-002-xss-request-response.md,Complete,Recommended
+TM-008,AC-002,SR-004,ST-004,G4,IAM-Auth-Team,Recommended,Planned,evidence/http/WEB-004-authentication-request-response.md,Complete,Recommended
+TM-009,AC-006,SR-006,ST-006,"G3, G4",IAM-Auth-Team,Recommended,Planned,registers/security-requirements.csv#SR-006,Complete,Recommended
+TM-010,None,SR-009,ST-009,"G3, G5",Engineering-Lead,Recommended,Planned,registers/security-requirements.csv#SR-009,Complete,Recommended
+TM-011,None,SR-010,ST-010,"G4, G6",Security-Lead,Recommended,Planned,registers/security-requirements.csv#SR-010,Complete,Recommended
+TM-012,AC-003,SR-008,ST-008,"G2, G4",IAM-Auth-Team,Recommended,Planned,registers/security-requirements.csv#SR-008,Complete,Recommended
