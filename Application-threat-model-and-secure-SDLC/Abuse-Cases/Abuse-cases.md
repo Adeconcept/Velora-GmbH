@@ -2,25 +2,25 @@
 
 This document structures six abuse cases modeling how malicious actors target the application's design boundaries, defining the exact prevention, detection, and testing logic needed to handle each scenario.
 
-## AC-001: Manipulate Checkout Total
+## AC-001: Manipulate Checkout total
 
 ### Business Function
 Customer Storefront Checkout & Payment Verification Engine.
 
-### Threat Actor and Goal
+### Threat actor and goal
 External malicious visitor or fraudulent customer whose goal is to alter the financial price parameter of an inventory item during cart submission to purchase goods for less than retail value.
 
 ### Preconditions
 - Attacker has a standard consumer account and an active browser proxy configuration setup.
 - The web storefront relies on client-side HTTP request data values to process the cart total.
 
-### Abuse Path
+### Abuse path
 1. The attacker adds a premium inventory item to their virtual shopping cart.
 2. The attacker intercepts the checkout request via an HTTP proxy tool before it routes to the payment gateway.
 3. The attacker manipulates the unit cost value down to a fraction of its cost and submits the tampered payload.
 4. The server-side transaction logic processes the client-supplied parameter without server validation, letting the attacker complete a fraudulent purchase.
 
-### Assets and Data Affected
+### Assets and data affected
 - **Asset IDs**: AST-001, AST-002
 - **Data IDs**: DAT-002 (Restricted Order & Payment Metadata)
 
