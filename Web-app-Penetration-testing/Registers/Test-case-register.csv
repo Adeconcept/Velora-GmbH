@@ -1,4 +1,5 @@
 Test_ID,Finding_ID,Method_And_Endpoint,Baseline_Behavior,Test_Behavior,Outcome,Evidence_Ref,Test_Date
 TC-WEB-001,WEB-001,"GET /filter?category=<input>","Returns standard category items with a response length of 8034 bytes.","Bypasses standard where filter criteria, dumping hidden items and altering response length.",Fail,"evidence/http/WEB-001-sqli-request-response.md",2026-09-08
 TC-WEB-002,WEB-002,"GET /?search=<input>","Reflects harmless marker text inside HTML header blocks safely without script execution.","Parses unencoded script tags directly into the DOM structure, executing a localized alert payload.",Fail,"evidence/http/WEB-002-xss-request-response.md",2026-09-08
-
+TC-WEB-003,WEB-003,"GET /administrator-panel","Returns a 404 error or generic page mask if accessed via standard client routing menus.","Grants complete unauthenticated entry to the management panel dashboard, exposing dangerous delete actions.",Fail,"evidence/http/WEB-003-access-control-request-response.md",2026-09-10
+TC-WEB-004,WEB-004,"GET /my-account?id=<username>","Enforces a strict redirect block or drops session validation if the 2FA factor step is incomplete.","Loads the full protected profile view directly, completely short-circuiting the active multi-factor workflow state machine.",Fail,"evidence/http/WEB-004-authentication-request-response.md",2026-09-10
