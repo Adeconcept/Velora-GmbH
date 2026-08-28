@@ -1,44 +1,34 @@
-# Vulnerability Management Lifecycle & Verification Methodology
+# Threat-Modeling Methodology
 
-This document outlines the end-to-end vulnerability management framework implemented for Velora Commerce GmbH. It defines the structured lifecycle stages, tracking states, and strict engineering rules utilized to convert automated vulnerability scan data into defensive operational actions.
+This document establishes the repeatable, structured threat-modeling framework used by Velora Commerce GmbH to evaluate systemic architectural risks, identify application design defects before software implementation, and maintain strong compliance controls across the secure software development lifecycle (S-SDLC).
 
-## 1. Vulnerability Lifecycle Workflow
-Every security defect or misconfiguration discovered on Velora assets progresses sequentially through the following 12-stage lifecycle:
+## 1. Core Analytical Questions
+The threat-modeling lifecycle systematically evaluates infrastructure designs by answering eight technical and operational questions:
+1. **What are we building?** Establish clear technical boundaries via Data-Flow Diagrams (DFDs).
+2. **What valuable assets and data does it handle?** Identify and catalog information payloads (e.g., DAT-001, DAT-002) intersecting the environment.
+3. **Where does identity, privilege, ownership, or control change?** Locate and isolate critical trust boundaries (e.g., TB1, TB2).
+4. **What can go wrong?** Enumerate plausible structural abuse scenarios using industry-standard threat frameworks.
+5. **Which scenarios matter most?** Prioritize threat items via qualitative and quantitative inherent risk metrics.
+6. **What control should prevent, detect, or limit each scenario?** Propose specific architectural and programming countermeasures.
+7. **How will the control be verified?** Map every defensive requirement to explicit automated and manual security verification tests.
+8. **Who accepts what remains?** Ensure transparent technical sign-off and formal executive risk owner accountability.
 
-1. **Scope**: Define systemic boundaries, classify target assets (e.g., AST-004 / LAB-UBU-01), and align business criticality.
-2. **Discover**: Enumerate active devices, exposed listening ports, network paths, and host operating systems.
-3. **Scan**: Execute automated assessments using authorized tools (Nessus Essentials v10.12.4) via authenticated and unauthenticated parameters.
-4. **Normalize**: Parse raw, disparate outputs into a unified data structure matching the Velora organizational data dictionary.
-5. **Verify**: Manually validate scanner deductions against local file states, runtime configs, and upstream vendor indices.
-6. **Enrich**: Correlate valid items against modern exploit vectors using data feeds from CISA KEV, EPSS, and Ubuntu Security Notices.
-7. **Prioritize**: Calculate localized risk exposure numbers using a blended approach of asset criticality, exploitation velocity, and exploitability.
-8. **Assign**: Designate ownership to a specific, context-appropriate system administrator or engineer.
-9. **Remediate**: Deploy security patches, execute code corrections, structural modifications, or configuration hardening.
-10. **Retest**: Perform targeted rescan executions using identical templates to verify configuration alterations or missing software.
-11. **Close or Accept**: Sign off on successful risk elimination, or transition to a time-delimited executive risk acceptance window.
-12. **Measure**: Aggregate SLA performance, remediation timelines, and overall systemic exposure drift to leadership.
+## 2. Operational Framework Rules
+*   **Systemic Modeling:** Deconstruct the target architecture into a formalized, portable Mermaid-based Data-Flow Diagram (DFD) tracking Processes, Data Stores, External Entities, and Data Flows.
+*   **STRIDE Execution:** Apply the STRIDE matrix systematically to every modeled component and across all boundary-crossing network transactions.
+*   **Abuse Case Alignment:** Craft descriptive, misuse-oriented abuse scenarios mapping real-world attacker methodologies directly against core business workflows.
+*   **Quantitative Scoring:** Compute inherent and residual Risk Scores using the established 5x5 Likelihood and Impact prioritization matrix.
+*   **Risk Governance Track:** Assign explicit risk decisions: **Avoid** (re-engineer out of scope), **Mitigate** (deploy defensive technical controls), **Transfer** (delegate liability to an approved third party), or **Accept** (log as managed residual risk).
+*   **Traceability Assurance:** Every mitigation decision must map directly to a testable security requirement and link to an independent verification test script.
+*   **Continuous Review:** Re-evaluate and re-trigger the threat model execution whenever material code alterations, routing infrastructure shifts, or logic changes occur.
 
-## 2. Definitive Vulnerability Status States
+## 3. STRIDE Threat Classifications
+*   **Spoofing:** Pretending to be another user, system identity, API token, third-party webhook connection, or background build service.
+*   **Tampering:** Unauthorized modification or malicious alteration of persistent data stores, runtime memory strings, transit network packets, or software deployment files.
+*   **Repudiation:** Denying a malicious or state-changing action because attribution logging evidence is missing, unauthenticated, or un-retained.
+*   **Information Disclosure:** Unauthorized reading or structural leakage of Restricted or Confidential data records to unauthorized users or logging outputs.
+*   **Denial of Service:** Preventing, disrupting, or degrading intended application services, memory space, network loops, or compute operations.
+*   **Elevation of Privilege:** Gaining computational capabilities, path executions, or dashboard access rights beyond intended authorization models.
 
-| Status | Meaning |
-| :--- | :--- |
-| **New** | Scanner ingestion or a manual discovery mechanism has created the initial baseline record. |
-| **Validating** | A security analyst is actively compiling local package evidence and evaluating vendor advisory status. |
-| **Confirmed** | Authoritative local and vendor evidence confirms the weakness exists and applies directly to the active asset configuration. |
-| **False Positive** | Defensible evidence proves that the reporting detector is fundamentally incorrect or the flag does not apply. |
-| **In Remediation** | A formal correction strategy has been approved, scheduled, and handed off to the asset custodian for execution. |
-| **Mitigated** | Layered network perimeter modifications or compensating controls have lowered exposure, but the primary code remains. |
-| **Accepted** | An authorized corporate risk owner formally signs off on carrying the residual risk across a time-limited block. |
-| **Closed** | Remediation actions have been implemented, and an automated retest pass formally validates structural resolution. |
-| **Reopened** | A regression occurs where a previously fixed vulnerability reappears during a modern scanning pipeline. |
-
-## 3. Engineering Verification Rules
-
-*   **Banner Disregard**: Never establish a final defensive decision based on a remote banner version fallback alone when authenticated local package-level verification data (`dpkg-query`, config file parsers) can be extracted.
-*   **Granular Asset Verification**: Validate findings by mapping the intersection of: the targeted application package, exact sub-version string, specific Ubuntu upstream release code (e.g., 24.04 LTS Noble Numbat), port number, communications protocol, and local operating state.
-*   **Upstream Vulnerability Verification**: Cross-reference all inferred Ubuntu OS discrepancies directly using the official [Ubuntu CVE Tracker](https://ubuntu.com) or [Ubuntu Security Notices (USN)](https://ubuntu.com) databases to determine true patch applicability.
-*   **Exploitation Validation**: Query the [CISA Known Exploited Vulnerabilities (KEV)](https://cisa.gov) registry using the exact CVE identifier to gauge active weaponization.
-*   **Exploit Probability Scoring**: Utilize the **Exploit Prediction Scoring System (EPSS)** calculation metrics strictly when a confirmed CVE mapping is present. The specific date of the EPSS lookup API query must be retained in the register logs.
-*   **Deductive Failure Handling**: When an analyst fails to replicate or confirm a scan-flagged defect due to target environment quirks, record the status specifically as `Not Reproducible`. Do not label it a `False Positive` unless authoritative architectural proof shows why the scanner logic was flawed.
-*   **Passive Validation Constraints**: Security analysts are strictly prohibited from writing or firing functional exploit payloads against Velora production or lab infrastructure merely to prove exposure. Local software configuration reviews, state machine mapping, and vendor-validated advisory matches represent completely sufficient proof.
-
+## 4. Analytical Boundary Note
+The STRIDE methodology operates as a structural questioning engine to uncover potential architectural weaknesses. It does not provide absolute proof of an exploitable vulnerability, nor does it automatically dictate localized enterprise business severity without contextual prioritization logic.
