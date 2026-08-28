@@ -1,1 +1,4 @@
+Test_ID,Finding_ID,Method_And_Endpoint,Baseline_Behavior,Test_Behavior,Outcome,Evidence_Ref,Test_Date
+TC-WEB-001,WEB-001,"GET /filter?category=<input>","Returns standard category items with a response length of 8034 bytes.","Bypasses standard where filter criteria, dumping hidden items and altering response length.",Fail,"evidence/http/WEB-001-sqli-request-response.md",2026-09-08
+TC-WEB-002,WEB-002,"GET /?search=<input>","Reflects harmless marker text inside HTML header blocks safely without script execution.","Parses unencoded script tags directly into the DOM structure, executing a localized alert payload.",Fail,"evidence/http/WEB-002-xss-request-response.md",2026-09-08
 
