@@ -1,0 +1,2 @@
+Lab_Asset_ID,Velora_Asset_ID,Hostname,IP_Address,Operating_System,Architecture,Environment,Business_Criticality,Exposure,Owner,Authorization_Basis,Scan_Window,Status,Evidence_Label
+"LAB-UBU-01","AST-004","velora-ubuntu-lab","REDACTED_PRIVATE_IP","Ubuntu Server","ARM64","Owned UTM lab","Critical","Private lab network","Engineering Lead simulated","User-owned lab VM","2026-08-31 to 2026-09-04","Authorized","Observed and Simulated"
