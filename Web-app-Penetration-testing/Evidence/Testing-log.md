@@ -29,7 +29,7 @@ This log documents the sequential manual test cases executed against the authori
 - **Authorization confirmed**: Yes
 - **Exact host in private scope record**: Yes
 - **Authentication state**: Unauthenticated / Anonymous
-- **Baseline action**: Submitting an alphanumeric search query marker string (`week21-control-7f3a`) to the application storefront main search parameter.
+- **Baseline action**: Submitting an alphanumeric search query marker string (`|+`) to the application storefront main search parameter.
 - **Changed element**: Injected an unencoded HTML markup sequence payload (`<script>alert(1)</script>`) directly into the `search` URL parameter string.
 - **Expected secure result**: The application filters markdown control tokens or performs context-aware HTML entity output encoding (`&lt;script&gt;`), rendering the string safely as plain text text context.
 - **Actual result**: The unencoded characters were reflected raw into the DOM layout, forcing the web browser engine to interpret and run the executable script block.
