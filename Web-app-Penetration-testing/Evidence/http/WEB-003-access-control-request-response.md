@@ -9,7 +9,7 @@
 
 ![Admin panel Accessible](https://github.com/Adeconcept/Velora-GmbH/blob/1a5a4be582b0297dcc56599309d71304fe379791/Web-app-Penetration-testing/Evidence/Screenshots/03-admin-panel-access.png)
 
-*Figure 1. Harmless url extensions added robot.txt that reveals administration panel*
+*Figure 1. Harmless url extensions added robot.txt that reveals administration panel with redacted host and session id*
 
 
 ---
