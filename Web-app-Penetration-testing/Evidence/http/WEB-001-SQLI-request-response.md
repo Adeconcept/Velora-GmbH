@@ -5,6 +5,16 @@
 - **Named PortSwigger lab**: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
 - **Test date**: 2026-09-08
 
+
+---
+
+![SQLI](https://github.com/Adeconcept/Velora-GmbH/blob/3fbbe6cf37af0a69ee8e92c4b63c5b03fdb5004b/Web-app-Penetration-testing/Evidence/Screenshots/01-Burp-scope-and-http-history.png)
+
+*Figure 1. Burp scope and HTTP history.*
+
+---
+
+
 ## Hypothesis
 The category input changes server-side query logic because it is not safely parameterized. If the parameter is concatenated directly into a database `WHERE` clause, appending a true Boolean condition will bypass the application's filtration rules and force the data layer to expose hidden, unreleased inventory items.
 
