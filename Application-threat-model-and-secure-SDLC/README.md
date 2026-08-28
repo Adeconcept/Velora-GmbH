@@ -1,55 +1,63 @@
-# Vulnerability Management Lifecycle
+# Application Threat Model and Secure SDLC
 
 ## Executive Summary
-I completed a simulated business-context vulnerability-management project using one authorized Ubuntu ARM lab VM. I moved from scoping and credentialed scanning through validation, KEV and exploit-context enrichment, risk-based prioritization, remediation planning, safe changes, rescanning, and evidence-based closure.
+I created a threat model and secure-development workflow for Velora Commerce's fictional customer application [Simulated]. The project maps Critical business assets, Restricted data, external services, eleven data flows, and trust boundaries, then uses STRIDE and abuse cases to identify design threats [Tested].
+
+Each priority threat links to a risk decision, measurable security requirement, verification test, owner, and release gate [Recommended]. The architecture and business context are Simulated, while traceability and scoring consistency are Tested [Tested].
 
 ## Business Problem
-Velora's fictional critical application server relied on manual patching without an approved service target or current evidence. Leadership needed to know which findings were applicable, what should be fixed first, how availability would be protected, and whether remediation actually worked.
+Velora's fictional storefront and checkout depend on customer accounts, Restricted data, AWS, Stripe, workforce identity, source control, and security logging [Simulated]. Security weaknesses found late are expensive to correct, so the team needs security requirements and verification gates before release [Recommended].
 
 ## Objectives
-- Establish authorized and reproducible scan coverage.
-- Compare unauthenticated and credentialed visibility.
-- Validate scanner findings with native and authoritative evidence.
-- Prioritize using severity, exploitation, exposure, criticality, impact, and controls.
-- Create actionable remediation tickets and safe rollback.
-- Rescan and prove closure or document residual risk.
+- Model the system and trust boundaries.
+- Identify threats systematically with STRIDE.
+- Describe attacker goals through abuse cases.
+- Prioritize threats using business impact.
+- Translate threats into testable requirements.
+- Define secure SDLC responsibilities and release gates.
+- Trace each priority control to verification evidence.
 
-## Environment
-- MacBook M1 scanner host
-- UTM Ubuntu Server ARM target (LAB-UBU-01)
-- Nessus Essentials v10.12.4
-- SSH credentialed checks using a dedicated non-privileged key-based identity (`nessus-audit`)
-- One exact private lab IP: `192.168.XX.X` Alias `LAB-UBU-01`
+## System in Scope
+- **AST-001** customer web application
+- **AST-002** customer and order database
+- **AST-003** AWS production account
+- **AST-004** Ubuntu application server
+- **AST-006** Microsoft Entra ID
+- **AST-009** GitHub repositories
+- **AST-010** Stripe payment service
+- **AST-013** CloudTrail audit logs
+- **AST-014** hosted Splunk
+- **DAT-001**, **DAT-002**, **DAT-004**, and **DAT-006**
 
 ## Method
-Scope → Discover → Scan → Normalize → Verify → Enrich → Prioritize → Assign → Remediate → Retest → Close or Accept → Measure
+Scope -> Model -> Identify assets and flows -> Mark trust boundaries -> Apply STRIDE -> Write abuse cases -> Score risk -> Select response -> Write requirements -> Define tests -> Apply security gates -> Review change
 
 ## Key Results
-- 1 authorized asset assessed.
-- 3 scans completed: unauthenticated baseline, credentialed baseline, and post-remediation.
-- Credentialed checks: **Yes, as 'nessus-audit' via ssh** (Confirmed via Plugin 19506).
-- **1** actionable low-severity finding validated (`VUL-001`).
-- **1** confirmed finding, **0** false positives or not reproducible issues recorded.
-- **1** remediated and closed after retest.
-- **0** findings mitigated, accepted, or still open.
-- **100%** percent credentialed coverage and **100%** percent closure rate.
+- DFD elements: **11**
+- Data flows: **11**
+- Threats identified: **12**
+- Critical inherent threats: **2** (`TM-004`, `TM-006`)
+- High inherent threats: **8**
+- Security requirements: **12**
+- Planned verification tests: **12**
+- Blocking security gates: **7**
 
 ## Priority Decision
-The single actionable item discovered was **VUL-001 (ICMP Timestamp Request Remote Date Disclosure)**. This was prioritized above generic informational findings because it represented a live kernel network configuration gap linked to an completely inactive host firewall (`UFW: Inactive`). While its base severity was Low, it received immediate remediation prioritization because securing host network baseline exposure represents a fundamental first step in protecting the asset's checkout business context.
+The highest-priority design threat identified was **TM-004 (SQL Injection in Catalog Engine)**, carrying a Critical inherent risk score of **20** [Tested]. To address this, security requirement **SR-001** mandates the complete use of statically parameterized queries across all data abstraction wrappers [Recommended]. This control will be verified before production code integration via test plan **ST-001** (Query Parameterization Validation) [Planned], owned directly by the **Development-Team** [Simulated] and enforced as a blocking condition at development pipeline gate **G3 (Code and Build)** [Recommended].
 
-## Remediation Safety
-Every change used a pre-check, UTM snapshot, implementation steps, service validation, rollback, completion evidence, and a matching rescan criterion.
+## Week 21 Connection
+SQL injection, reflected XSS, missing authorization, and 2FA bypass were reproduced only in authorized PortSwigger training labs [Observed]. Week 22 uses those lessons to create preventive design requirements without claiming the weaknesses existed at Velora [Tested].
 
 ## Repository Contents
-- `docs/`, authorization, lab, method, prioritization, remediation, limitations, and lessons
-- `registers/`, asset, findings, tickets, and exceptions
-- `evidence/scans/`, sanitized manual scan summaries and metadata
-- `evidence/verification/`, native checks, finding validation, and change log
-- `reports/`, technical assessment and executive summary
+- `architecture/`, DFD, element inventory, flow inventory, and trust boundaries
+- `registers/`, threats, requirements, and risk acceptance
+- `abuse-cases/`, misuse scenarios and linked controls
+- `sdlc/`, lifecycle, gates, and responsibilities
+- `testing/`, test plan and end-to-end traceability
+- `reports/`, technical and executive reporting
 
 ## Skills Demonstrated
-Vulnerability scanning, credentialed assessment, Linux verification, CVE research, CISA KEV, CVSS and EPSS interpretation, false-positive analysis, risk-based prioritization, patching, change control, rollback, rescanning, and executive reporting.
+Application threat modeling, data-flow analysis, trust-boundary identification, STRIDE, abuse cases, risk assessment, security requirements, OWASP ASVS, NIST SSDF, secure SDLC design, release governance, test planning, and executive communication.
 
 ## Limitations
-One owned lab asset was tested. Nessus Essentials licensing limited normal export, and non-privileged SSH checks reduced local configuration depth. No production or unauthorized target was scanned.
-
+This is a fictional architecture exercise, not an assessment of a real company [Tested]. No source code, production system, cloud configuration, vendor control, or security test was reviewed [Tested]. Requirements and residual-risk values remain Recommended targets until implementation and verification [Tested].
