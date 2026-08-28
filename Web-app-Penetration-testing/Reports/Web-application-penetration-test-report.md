@@ -203,7 +203,7 @@ Validate that anonymous and standard user profile requests to administrative rou
 
 ## WEB-004: Multi-Factor Authentication State Bypass
 
-**Severity:** High (Risk Score: 12)
+**Severity:** Medium (Risk Score: 12)
 **Status:** Open, training lab  
 **Asset:** AST-001, simulated mapping  
 **Lab:** LAB-WEB-03  
@@ -237,7 +237,7 @@ Simulated: Risks broad account takeover and compromises restricted customer prof
 
 - **Likelihood Score and Drivers:** Score 4 (Visible path markers, simple URL string modification, requires first-factor token, independent of user interaction).
 - **Impact Score and Drivers:** Score 3 (Exposes full user identity details, allows limited account state modifications, affects a critical account control node).
-- **Risk Score:**  $4 \times 3 = 12$ (High Severity).
+- **Risk Score:** $4 \times 3 = 12$ (Medium Severity)
 
 
 ### Remediation 
