@@ -1,1 +1,2 @@
-
+Acceptance_ID,Threat_ID,Reason,Alternatives_Considered,Compensating_Controls,Residual_Risk,Requested_By,Approved_By,Start_Date,Expiry_Date,Review_Date,Decision,Status,Evidence_Refs,Evidence_Label
+,,,Blank Template - No Active Acceptances Approved,,,Engineering-Lead,CTO,,,2026-09-14,Tracking,Template,,Observed
