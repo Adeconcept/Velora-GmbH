@@ -1,21 +1,17 @@
-# Executive Vulnerability Summary
+# Executive Web Application Security Summary
 
-## Overall conclusion
-One authorized Ubuntu ARM lab asset was assessed using unauthenticated and credentialed Nessus scans, Ubuntu-native verification, threat-context enrichment, safe remediation, and post-change rescanning.
+## Overall Conclusion
+A manual security assessment was completed across four independent, deliberately vulnerable PortSwigger training labs representing Velora's fictional product catalog, search, administration, and authentication functions.
 
-The credentialed baseline identified **1** actionable finding. **1** was Confirmed, **0** were False Positive or Not Reproducible, and **1** required remediation or mitigation. The highest-priority issue was **VUL-001 (ICMP Timestamp Date Disclosure)**, because although it lacked active CISA KEV utilization or an entry on public exploitation indexes, the asset carries a high business criticality weight (criticality score of 4 out of 4) as a simulated production checkout host interface.
+**4 of 4** planned test cases successfully reproduced a security weakness. The most important simulated business risk was **WEB-003: Missing Authorization Check on Administrative Interface**, because an unauthenticated threat actor can discover hidden paths and use them to execute administrative commands—such as deleting active user profiles—without providing any credentials. The assessment demonstrated how unsafe input handling, missing server-side authorization, or incomplete authentication state can expose critical application functions.
 
-## Actions completed
-- **Host Firewall Activation & Packet Dropping:** Configured and activated the local Ubuntu Uncomplicated Firewall (UFW) to explicitly secure management pathways while dropping unauthorized inbound ICMP Type 13/14 requests natively within the host kernel network stack.
-- **Automated Validation Rescan:** Executed a post-remediation authenticated rescan (Scan C), proving a 100% elimination of the targeted vulnerability entry while maintaining stable system accessibility.
-- **Post-Assessment Identity Deletion:** Erased the temporary testing identity from the server via `sudo userdel -r nessus-audit` after identifying and terminating a lingering background SSH connection profile.
+## Priority Actions
+1. **Parameterized Query Migration:** Remove all direct string concatenation patterns from database lookup functions, replacing them with secure prepared statements to neutralize SQL injection vectors.
+2. **Server-Side Authorization Interceptors:** Implement server-side authorization wrappers across all privileged routing paths to validate access permissions before running commands.
+3. **Automated Security Regression Testing:** Add automated negative security tests to the continuous integration and delivery pipeline to prevent authentication and input processing flaws from slipping into production builds.
 
-## Residual risk
-There is zero residual vulnerability risk remaining on the targeted host environment. All localized network-facing software configuration vulnerabilities have been successfully closed and verified by automated scanning logic.
+## Retest Status
+No remediated application build was available. Retest cases are defined, but all confirmed lab findings remain Open and no closure is claimed.
 
-## Program recommendation
-Establish recurring monthly automated scanning pipelines, require immediate configuration reviews whenever new CISA KEV entries match Velora assets, monitor credentialed check coverage metrics to maintain internal visibility, enforce risk-based remediation SLAs, track exception expiry calendars, and mandate independent closure validation checks across all production infrastructure instances.
-
-## Limitation
-The assessment used one owned lab VM and does not represent a production Velora environment or a complete enterprise vulnerability program.
-
+## Business Boundary
+The technical findings came from authorized training labs. Velora assets, data impact, ownership, severity, and remediation timing are simulated portfolio context, not results from a real company.
