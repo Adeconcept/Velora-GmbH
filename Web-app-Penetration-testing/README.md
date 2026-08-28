@@ -1,55 +1,66 @@
-# Vulnerability Management Lifecycle
+# Authorized Web Application Penetration Test
 
 ## Executive Summary
-I completed a simulated business-context vulnerability-management project using one authorized Ubuntu ARM lab VM. I moved from scoping and credentialed scanning through validation, KEV and exploit-context enrichment, risk-based prioritization, remediation planning, safe changes, rescanning, and evidence-based closure.
+I completed a controlled manual web application security assessment using four deliberately vulnerable PortSwigger Web Security Academy labs. The project demonstrates authorization, attack-surface mapping, HTTP request analysis, manual validation, risk-based reporting, developer remediation guidance, and independent retest design.
+
+The labs modelled SQL injection, reflected XSS, missing authorization, and incomplete 2FA enforcement. Technical results are labelled Tested, while Velora business impact, owners, priorities, and timelines are explicitly Simulated.
 
 ## Business Problem
-Velora's fictional critical application server relied on manual patching without an approved service target or current evidence. Leadership needed to know which findings were applicable, what should be fixed first, how availability would be protected, and whether remediation actually worked.
+Velora's fictional customer application supports storefront, account, and administrative workflows involving Restricted customer and order data. Leadership needs evidence that application controls prevent untrusted input from changing interpreter behavior, unauthorized users from reaching privileged actions, and partially authenticated sessions from accessing protected resources.
 
 ## Objectives
-- Establish authorized and reproducible scan coverage.
-- Compare unauthenticated and credentialed visibility.
-- Validate scanner findings with native and authoritative evidence.
-- Prioritize using severity, exploitation, exposure, criticality, impact, and controls.
-- Create actionable remediation tickets and safe rollback.
-- Rescan and prove closure or document residual risk.
+- Establish written authorization and exact scope.
+- Map relevant endpoints, inputs, roles, and trust boundaries.
+- Compare baseline and controlled test behavior.
+- Validate four application-security weakness classes manually.
+- Map results to OWASP Top 10:2025, WSTG, and CWE.
+- Prioritize findings using documented likelihood and impact.
+- Give developers root-cause fixes and testable acceptance criteria.
 
 ## Environment
 - MacBook M1 scanner host
-- UTM Ubuntu Server ARM target (LAB-UBU-01)
-- Nessus Essentials v10.12.4
-- SSH credentialed checks using a dedicated non-privileged key-based identity (`nessus-audit`)
-- One exact private lab IP: `192.168.XX.X` Alias `LAB-UBU-01`
+- Burp Suite Community Edition
+- Burp embedded browser
+- PortSwigger Web Security Academy
+- Four independent temporary training labs
 
 ## Method
-Scope → Discover → Scan → Normalize → Verify → Enrich → Prioritize → Assign → Remediate → Retest → Close or Accept → Measure
+Authorize -> Scope -> Map -> Baseline -> Hypothesize -> Modify -> Compare -> Verify -> Classify -> Prioritize -> Recommend -> Plan retest
+
+## Test Coverage
+
+| Test | Weakness | Outcome | Evidence |
+|---|---|---|---|
+| **TC-WEB-001** | SQL injection | **Fail** | `evidence/http/WEB-001-sqli-request-response.md` |
+| **TC-WEB-002** | Reflected XSS | **Fail** | `evidence/http/WEB-002-xss-request-response.md` |
+| **TC-WEB-003** | Missing authorization | **Fail** | `evidence/http/WEB-003-access-control-request-response.md` |
+| **TC-WEB-004** | 2FA workflow bypass | **Fail** | `evidence/http/WEB-004-authentication-request-response.md` |
 
 ## Key Results
-- 1 authorized asset assessed.
-- 3 scans completed: unauthenticated baseline, credentialed baseline, and post-remediation.
-- Credentialed checks: **Yes, as 'nessus-audit' via ssh** (Confirmed via Plugin 19506).
-- **1** actionable low-severity finding validated (`VUL-001`).
-- **1** confirmed finding, **0** false positives or not reproducible issues recorded.
-- **1** remediated and closed after retest.
-- **0** findings mitigated, accepted, or still open.
-- **100%** percent credentialed coverage and **100%** percent closure rate.
+- Planned tests: 4
+- Completed tests: 4
+- Confirmed lab findings: 4
+- Critical: 0
+- High: 1 (`WEB-003`)
+- Medium: 3 (`WEB-001`, `WEB-002`, `WEB-004`)
+- Low: 0
+- Findings closed after remediation: 0, no remediated build was available
 
-## Priority Decision
-The single actionable item discovered was **VUL-001 (ICMP Timestamp Request Remote Date Disclosure)**. This was prioritized above generic informational findings because it represented a live kernel network configuration gap linked to an completely inactive host firewall (`UFW: Inactive`). While its base severity was Low, it received immediate remediation prioritization because securing host network baseline exposure represents a fundamental first step in protecting the asset's checkout business context.
+## Most Important Decision
+`WEB-003` (Missing Authorization Check on Administrative Interface) was prioritized as the highest operational risk. This decision was driven by two key severity factors: its maximum Discoverability score (4), as the path was openly disclosed in `robots.txt`, and its trivial Exploitability score (4), which allowed anonymous browser access to state-changing functions. This finding ranked higher than `WEB-004` (2FA Workflow Bypass) because `WEB-004` required a pre-existing valid standard user password compromise to execute, lowering its baseline likelihood.
 
-## Remediation Safety
-Every change used a pre-check, UTM snapshot, implementation steps, service validation, rollback, completion evidence, and a matching rescan criterion.
+## Remediation and Retest
+Each confirmed finding includes a root-cause fix, owner, target, deployment-safety considerations, positive test, negative test, and closure rule. Because the training labs could not be patched by the tester, recommendations are Planned and no finding is falsely marked Closed.
 
 ## Repository Contents
-- `docs/`, authorization, lab, method, prioritization, remediation, limitations, and lessons
-- `registers/`, asset, findings, tickets, and exceptions
-- `evidence/scans/`, sanitized manual scan summaries and metadata
-- `evidence/verification/`, native checks, finding validation, and change log
-- `reports/`, technical assessment and executive summary
+- `docs/`, scope, setup, methodology, attack surface, severity, limitations, and lessons
+- `registers/`, test cases and normalized findings
+- `evidence/`, sanitized HTTP summaries, testing log, and six screenshots
+- `remediation/`, corrective-action and independent retest plans
+- `reports/`, technical and executive reporting
 
 ## Skills Demonstrated
-Vulnerability scanning, credentialed assessment, Linux verification, CVE research, CISA KEV, CVSS and EPSS interpretation, false-positive analysis, risk-based prioritization, patching, change control, rollback, rescanning, and executive reporting.
+Rules of engagement, Burp Proxy, Repeater, HTTP analysis, SQL injection validation, reflected XSS validation, authorization testing, authentication workflow testing, OWASP mapping, CWE classification, risk rating, remediation design, retest planning, and executive communication.
 
 ## Limitations
-One owned lab asset was tested. Nessus Essentials licensing limited normal export, and non-privileged SSH checks reduced local configuration depth. No production or unauthorized target was scanned.
-
+This was an authorized lab-based project, not a client engagement. Four purpose-built labs were assessed independently, no production target or real data was tested, and no remediated build was available.
