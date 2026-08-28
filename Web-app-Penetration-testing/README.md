@@ -31,10 +31,10 @@ Authorize -> Scope -> Map -> Baseline -> Hypothesize -> Modify -> Compare -> Ver
 
 | Test | Weakness | Outcome | Evidence |
 |---|---|---|---|
-| **TC-WEB-001** | SQL injection | **Fail** | `evidence/http/WEB-001-sqli-request-response.md` |
-| **TC-WEB-002** | Reflected XSS | **Fail** | `evidence/http/WEB-002-xss-request-response.md` |
-| **TC-WEB-003** | Missing authorization | **Fail** | `evidence/http/WEB-003-access-control-request-response.md` |
-| **TC-WEB-004** | 2FA workflow bypass | **Fail** | `evidence/http/WEB-004-authentication-request-response.md` |
+| **TC-WEB-001** | SQL injection | **Fail** | [evidence/http/WEB-001-sqli-request-response.md](https://github.com/Adeconcept/Velora-GmbH/blob/c137ef3d98b96cc2b318970c76a648fcecd592cc/Web-app-Penetration-testing/Evidence/http/WEB-001-SQLI-request-response.md) |
+| **TC-WEB-002** | Reflected XSS | **Fail** | [evidence/http/WEB-002-xss-request-response.md](https://github.com/Adeconcept/Velora-GmbH/blob/c137ef3d98b96cc2b318970c76a648fcecd592cc/Web-app-Penetration-testing/Evidence/http/WEB-002-xss-request-response.md) |
+| **TC-WEB-003** | Missing authorization | **Fail** | [evidence/http/WEB-003-access-control-request-response.md](https://github.com/Adeconcept/Velora-GmbH/blob/c137ef3d98b96cc2b318970c76a648fcecd592cc/Web-app-Penetration-testing/Evidence/http/WEB-003-access-control-request-response.md) |
+| **TC-WEB-004** | 2FA workflow bypass | **Fail** | [evidence/http/WEB-004-authentication-request-response.md](https://github.com/Adeconcept/Velora-GmbH/blob/c137ef3d98b96cc2b318970c76a648fcecd592cc/Web-app-Penetration-testing/Evidence/http/WEB-004-authentication-request-response.md) |
 
 ## Key Results
 - Planned tests: 4
