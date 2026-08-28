@@ -6,8 +6,8 @@
 - **Test date**: 2026-09-08
 
 ## Control
-- **Marker**: week21-control-7f3a
-- **Reflection location**: Reflected inside the text block of a header section element (`<h1>0 search results for 'week21-control-7f3a'</h1>`).
+- **Marker**: I+-
+- **Reflection location**: Reflected inside the text block of a header section element (`<h1>0 search results for 'I+-'</h1>`).
 - **Encoded in response**: No (The literal alphanumeric string was returned raw to the browser).
 - **Browser executed content**: No (Interpreted strictly as plain text characters within the header node).
 
