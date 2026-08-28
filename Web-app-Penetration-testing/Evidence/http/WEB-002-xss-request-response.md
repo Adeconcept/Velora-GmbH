@@ -5,6 +5,15 @@
 - **Named PortSwigger lab**: Reflected XSS into HTML context with nothing encoded
 - **Test date**: 2026-09-08
 
+
+---
+
+![Reflected Xss](https://github.com/Adeconcept/Velora-GmbH/blob/3fbbe6cf37af0a69ee8e92c4b63c5b03fdb5004b/Web-app-Penetration-testing/Evidence/Screenshots/02-Reflected-xss-proof.png)
+
+*Figure 1. Minimum harmless reflected-XSS proof showing browser interpretation of unencoded input in the authorized lab, without credential access, persistence, or external communication.*
+
+
+---
 ## Control
 - **Marker**: I+-
 - **Reflection location**: Reflected inside the text block of a header section element (`<h1>0 search results for 'I+-'</h1>`).
