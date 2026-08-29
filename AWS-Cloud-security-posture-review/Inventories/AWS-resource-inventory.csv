@@ -1,1 +1,6 @@
+Resource_Alias,Service,Resource_Type,Region,Business_Asset_ID,Data_Classification,Business_Criticality,Owner,Internet_Reachability,Encryption_Status,Logging_Status,Backup_or_Versioning,Review_Status,Evidence_Ref,Evidence_Label,Notes
+AWS-ACCOUNT-01,"AWS Account","Account boundary",Global,AST-003,Restricted,Critical,Account-Owner,Internal-Only,N/A,Active,N/A,Observed,private-evidence/account/caller-identity.json,"Simulated mapping, Observed account","Primary organization cloud environment envelope"
+S3-01,"Amazon S3","Backup bucket",eu-central-1,AST-005,Restricted,Critical,Database-Admin,Private-Enforced,AES-256,Active,Enabled,Observed,private-evidence/s3/s3-config.json,"Alias for Observed or Simulated resource","Retains secure backup database assets and point-in-time state records"
+CT-01,"AWS CloudTrail","Event history or trail",eu-central-1,AST-013,Confidential,High,Infrastructure-Lead,Internal-Only,KMS-Enforced,Active,Enabled,Observed,private-evidence/cloudtrail/cloudtrail-events.json,"Observed after review","Aggregates platform governance and infrastructure event logs"
+IAM-01,"AWS IAM","Identity service",Global,AST-003,Restricted,Critical,IT-Admin,Internet-Exposed-Portal,Enforced,Active,N/A,Observed,private-evidence/iam/credential-report.csv,"Observed service","Manages internal technical groups access controls and roles policies"
 
