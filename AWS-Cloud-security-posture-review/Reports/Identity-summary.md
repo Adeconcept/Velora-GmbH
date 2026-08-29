@@ -5,7 +5,7 @@ This document provides a sanitized structural review of the identities, authenti
 | Identity Alias | Credential Type | Console Access Policy | Multi-Factor Status | Programmatic Access keys | Last-Use Lifecycle Review | Assessment Decision |
 | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
 | **ROOT-01** | Root User Account | Emergency Break-Glass Only | **Enabled** (Hardware Key) | 0 | Reviewed (No activity recorded) | **Pass** |
-| **ID-01** | AWS-accessor (IAM User) | Disabled | **Enabled** (Virtual Token) | 2 (Active) | Active audit session use | **Failed** (Long-Lived Keys) |
+| **ID-01** | AWS-accessor (IAM User) | Disabled | **Enabled** Authenticator | 1 (Active) | Active audit session use | **Failed** (Long-Lived Keys) |
 | **ROLE-01** | SecurityAudit (Service Role) | Temporary Session | Enforced by IAM Control | 0 | Automated system validation | **Pass** |
 
 ---
