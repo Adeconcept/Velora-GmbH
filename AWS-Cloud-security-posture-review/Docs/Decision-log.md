@@ -38,11 +38,6 @@ This log lists the authoritative design, risk management, and cloud safety choic
 
 ---
 
-## DEC-005: Paid Security Services and Cost-Control Guardrails
-- **Date:** 2026-08-29
-- **Decision:** Explicitly defer or restrict the activation of premium AWS native monitoring services within the learning environment until formal business justification and budget allocations are approved.
-- **Reason:** Prevent cost overruns from automatic trial expirations, resource-evaluation counters, or data-ingestion fees while maintaining a predictable free-tier baseline.
-
 ### Security Monitoring Service Governance Matrix
 
 | Service | Primary Security Value | Cost Consideration Bounds | Week 23 Operational Decision |
