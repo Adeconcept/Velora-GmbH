@@ -1,55 +1,71 @@
-# Vulnerability Management Lifecycle
+# AWS Cloud Security Posture Review
 
 ## Executive Summary
-I completed a simulated business-context vulnerability-management project using one authorized Ubuntu ARM lab VM. I moved from scoping and credentialed scanning through validation, KEV and exploit-context enrichment, risk-based prioritization, remediation planning, safe changes, rescanning, and evidence-based closure.
+I completed an authorized, evidence-based security-posture review of a personal AWS learning account and mapped the technical results to Velora Commerce's fictional Critical cloud environment [Simulated]. The assessment covered account safeguards, IAM, S3, CloudTrail, monitoring readiness, and cost controls [Tested].
+
+I used read-only console and AWS CLI evidence, evaluated controls consistently, converted meaningful gaps into risk-scored findings, assigned remediation ownership, and retested approved defensive changes [Tested]. Raw AWS evidence remained outside Git, while the portfolio uses sanitized aliases and summaries [Tested].
 
 ## Business Problem
-Velora's fictional critical application server relied on manual patching without an approved service target or current evidence. Leadership needed to know which findings were applicable, what should be fixed first, how availability would be protected, and whether remediation actually worked.
+Velora's fictional customer platform, Restricted data, backup storage, and audit evidence depend on AWS [Simulated]. Identity, storage, or logging misconfiguration could affect several business services, so the team needs a repeatable review and accountable remediation process [Recommended].
 
 ## Objectives
-- Establish authorized and reproducible scan coverage.
-- Compare unauthenticated and credentialed visibility.
-- Validate scanner findings with native and authoritative evidence.
-- Prioritize using severity, exploitation, exposure, criticality, impact, and controls.
-- Create actionable remediation tickets and safe rollback.
-- Rescan and prove closure or document residual risk.
+- Protect the account before assessment.
+- Inventory relevant AWS resources.
+- Review root, IAM, credentials, policies, and trust.
+- Review S3 public access, protection, and recovery settings.
+- Review CloudTrail coverage and high-risk event monitoring.
+- Prioritize evidence-backed findings.
+- Retest approved changes.
+- Publish sanitized evidence only.
 
-## Environment
-- MacBook M1 scanner host
-- UTM Ubuntu Server ARM target (LAB-UBU-01)
-- Nessus Essentials v10.12.4
-- SSH credentialed checks using a dedicated non-privileged key-based identity (`nessus-audit`)
-- One exact private lab IP: `192.168.XX.X` Alias `LAB-UBU-01`
+## Scope
+- Authorized AWS learning account
+- Account safeguards and cost controls
+- IAM identities, credentials, policies, and Access Analyzer
+- Existing S3 configuration
+- CloudTrail Event history and existing trails
+- Monitoring procedure and cost-aware service decisions
 
 ## Method
-Scope → Discover → Scan → Normalize → Verify → Enrich → Prioritize → Assign → Remediate → Retest → Close or Accept → Measure
+Authorize -> Protect account -> Control cost -> Inventory -> Collect read-only evidence -> Evaluate controls -> Score risk -> Remediate safely -> Retest -> Sanitize -> Report
 
 ## Key Results
-- 1 authorized asset assessed.
-- 3 scans completed: unauthenticated baseline, credentialed baseline, and post-remediation.
-- Credentialed checks: **Yes, as 'nessus-audit' via ssh** (Confirmed via Plugin 19506).
-- **1** actionable low-severity finding validated (`VUL-001`).
-- **1** confirmed finding, **0** false positives or not reproducible issues recorded.
-- **1** remediated and closed after retest.
-- **0** findings mitigated, accepted, or still open.
-- **100%** percent credentialed coverage and **100%** percent closure rate.
+- **Applicative Checks:** 17 total checks processed [Tested]
+- **Review Coverage:** 100% (10 of 10 applicable baseline checks executed) [Tested]
+- **Passed:** 6 controls passed validation [Tested]
+- **Failed:** 4 controls failed validation [Tested]
+- **Manual Review:** 0 [Tested]
+- **Not Reviewed:** 0 [Tested]
+- **Critical Findings:** 0 [Tested]
+- **High Findings:** 3 (`AWS-SEC-001`, `AWS-SEC-003`, `AWS-SEC-004`) [Tested]
+- **Closed Findings:** 0 (Remains open pending formal change controls execution) [Tested]
+- **Validated Risk Reduction:** 37 targeted points [Tested]
 
-## Priority Decision
-The single actionable item discovered was **VUL-001 (ICMP Timestamp Request Remote Date Disclosure)**. This was prioritized above generic informational findings because it represented a live kernel network configuration gap linked to an completely inactive host firewall (`UFW: Inactive`). While its base severity was Low, it received immediate remediation prioritization because securing host network baseline exposure represents a fundamental first step in protecting the asset's checkout business context.
+## Priority Findings
+- **AWS-SEC-001 (High - Status: Open):** Routine CLI administration utilizes long-lived programmatic IAM access keys rather than secure short-lived tokens, risking persistent access theft if local workstations are compromised. Owned by IT-Admin.
+- **AWS-SEC-003 (High - Status: Open):** Complete absence of a multi-region continuous CloudTrail logging trail, risking absolute loss of historical forensic evidence beyond the rolling 90-day console history window. Owned by Infrastructure-Lead.
+- **AWS-SEC-004 (High - Status: Open):** No real-time alerting matrix or repeatable fallback manual log review process exists for critical control plane changes, permitting un-monitored administrative modifications. Owned by Security-Lead.
 
-## Remediation Safety
-Every change used a pre-check, UTM snapshot, implementation steps, service validation, rollback, completion evidence, and a matching rescan criterion.
+## Architecture
+The cloud posture metadata collection, telemetry pipeline analysis, and evidence sanitization paths flow along the following administrative boundaries:
+
+*(The comprehensive cloud component inventory maps are maintained under `inventories/aws-resource-inventory.csv`).*
+
+## Evidence and Privacy
+Raw caller identity, credential reports, IAM output, bucket names, CloudTrail events, account IDs, ARNs, IP addresses, and billing details are excluded from Git [Tested]. Published evidence uses aliases and redaction [Tested].
 
 ## Repository Contents
-- `docs/`, authorization, lab, method, prioritization, remediation, limitations, and lessons
-- `registers/`, asset, findings, tickets, and exceptions
-- `evidence/scans/`, sanitized manual scan summaries and metadata
-- `evidence/verification/`, native checks, finding validation, and change log
-- `reports/`, technical assessment and executive summary
+- `architecture/`, review and evidence-flow diagram
+- `inventories/`, data-classified cloud resources inventory matrix
+- `checklists/`, account safeguards, IAM identity, S3 protection, and CloudTrail logging check grids
+- `policies/`, offline unattached least-privilege policy testing templates
+- `monitoring/`, prioritized high-risk alert catalog and daily manual log review procedures
+- `findings/`, quantitative risk-scored vulnerability findings registries
+- `remediation/`, safety-sequenced corrective actions and independent retest execution commands
+- `reports/`, technical posture analysis documents and executive summaries
 
 ## Skills Demonstrated
-Vulnerability scanning, credentialed assessment, Linux verification, CVE research, CISA KEV, CVSS and EPSS interpretation, false-positive analysis, risk-based prioritization, patching, change control, rollback, rescanning, and executive reporting.
+AWS security, cloud IAM, temporary credentials, root-user protection, least privilege, policy analysis, S3 security, CloudTrail analysis, logging strategy, cloud risk assessment, evidence handling, remediation planning, retesting, and executive communication.
 
 ## Limitations
-One owned lab asset was tested. Nessus Essentials licensing limited normal export, and non-privileged SSH checks reduced local configuration depth. No production or unauthorized target was scanned.
-
+This is an authorized learning-account assessment mapped to a fictional company [Tested]. It is not a production review, penetration test, compliance audit, or complete AWS Well-Architected Review [Tested]. Services and controls outside the documented scope were not assessed [Tested].
