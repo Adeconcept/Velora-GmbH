@@ -10,7 +10,7 @@ This document provides a sanitized structural review of the identities, authenti
 
 ---
 
-## 🔍 Identity Assessment Insights
+## Identity Assessment Insights
 
 1. **Root Account Hardening (`ROOT-01`):** The primary root account is properly locked down. It has multi-factor authentication securely active, zero long-lived programmatic access keys generated, and shows zero recent operational log trails, proving it is strictly reserved for emergency break-glass scenarios.
 2. **Credential Risk Exposure (`ID-01`):** While user `AWS-accessor` has successfully enabled a virtual MFA token, the account relies on two active **long-lived programmatic access keys** stored on a local machine to run CLI actions. This configuration introduces a structural security gap and fails the temporary-session access check.
