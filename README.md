@@ -52,13 +52,13 @@ flowchart TD
 
 | Project | Security domain | What it demonstrates |
 |---|---|---|
-| [Security Program Risk Assessment](./security-program-risk-assessment/) | GRC and risk management | Inventories critical assets and data, prioritizes business-linked risks, maps selected NIST CSF 2.0 outcomes, and builds a 90-day treatment plan |
-| [Control, Compliance, Privacy and Vendor Review](./control-compliance-vendor-review/) | GRC, privacy, audit, third-party risk | Evaluates control design and evidence, records findings, screens privacy risk, reviews vendor dependencies, and creates an accountable remediation plan |
-| [Identity and Access Governance](./identity-access-governance/) | IAM | Models the identity lifecycle, defines RBAC and JML controls, reviews a risk-based identity sample, automates exception detection with PowerShell, and documents remediation decisions |
-| [Vulnerability Management Lifecycle](./vulnerability-management/) | Vulnerability management | Uses Nessus in an authorized Ubuntu ARM lab, validates findings, adds exploit and business context, manages remediation safely, and verifies closure through rescanning |
-| [Web Application Penetration Test](./web-application-penetration-test/) | Application security | Tests authorized PortSwigger labs with Burp Suite, documents injection, XSS, authorization, and authentication-control failures, and creates developer-ready remediation and retest criteria |
-| [Application Threat Model and Secure SDLC](./application-threat-model/) | Product and application security | Maps application flows and trust boundaries, applies STRIDE and abuse cases, prioritizes threats, and converts them into security requirements, tests, and release gates |
-| [AWS Cloud Security Posture Review](./aws-cloud-security-review/) | Cloud security | Reviews an authorized personal AWS learning account across IAM, S3, CloudTrail, monitoring, and cost safeguards, then defines safe remediation and retesting |
+| [Security Program Risk Assessment](./Security-program-risk-assessment-project/) | GRC and risk management | Inventories critical assets and data, prioritizes business-linked risks, maps selected NIST CSF 2.0 outcomes, and builds a 90-day treatment plan |
+| [Control, Compliance, Privacy and Vendor Review](./Control-and-compliance-vendor-review/) | GRC, privacy, audit, third-party risk | Evaluates control design and evidence, records findings, screens privacy risk, reviews vendor dependencies, and creates an accountable remediation plan |
+| [Identity and Access Governance](./Identity-and-access-governance) | IAM | Models the identity lifecycle, defines RBAC and JML controls, reviews a risk-based identity sample, automates exception detection with PowerShell, and documents remediation decisions |
+| [Vulnerability Management Lifecycle](./Vulnerability-management/) | Vulnerability management | Uses Nessus in an authorized Ubuntu ARM lab, validates findings, adds exploit and business context, manages remediation safely, and verifies closure through rescanning |
+| [Web Application Penetration Test](./Web-app-Penetration-testing/) | Application security | Tests authorized PortSwigger labs with Burp Suite, documents injection, XSS, authorization, and authentication-control failures, and creates developer-ready remediation and retest criteria |
+| [Application Threat Model and Secure SDLC](./Application-threat-model-and-secure-SDLC/) | Product and application security | Maps application flows and trust boundaries, applies STRIDE and abuse cases, prioritizes threats, and converts them into security requirements, tests, and release gates |
+| [AWS Cloud Security Posture Review](./AWS-Cloud-security-posture-review/) | Cloud security | Reviews an authorized personal AWS learning account across IAM, S3, CloudTrail, monitoring, and cost safeguards, then defines safe remediation and retesting |
 | [Windows and Linux Hardening with Recovery Validation](./system-hardening-recovery/) | System security and resilience | Establishes before-state baselines, applies selected role-aware controls, validates service availability and rollback readiness, and tests synthetic file recovery |
 | [Integrated Security Generalist Capstone](./security-generalist-capstone/) | Security leadership | Consolidates evidence into a threat briefing, measurable dashboard, incident tabletop, awareness plan, and prioritized executive roadmap |
 
@@ -150,10 +150,10 @@ Each project contains a focused selection of:
 
 For a quick review:
 
-1. Start with the [Security Program Risk Assessment](./Security-program-risk-assessment/) to understand the business, assets, and risk baseline.
-2. Review the [Identity and Access Governance](./Identity-access-governance/) or [Vulnerability Management Lifecycle](./20-vulnerability-management/) project for operational security evidence.
-3. Review the [Application Threat Model](./Application-threat-model/) for traceability from system design to testable controls.
-4. Review the [AWS Cloud Security Posture Review](./AWS-cloud-security-review/) for cloud evidence and remediation decisions.
+1. Start with the [Security Program Risk Assessment](./Security-program-risk-assessment-project/) to understand the business, assets, and risk baseline.
+2. Review the [Identity and Access Governance](./Identity-and-access-governance/) or [Vulnerability Management Lifecycle](./Vulnerability-management/) project for operational security evidence.
+3. Review the [Application Threat Model](./Application-threat-model-and-secure-SDLC/) for traceability from system design to testable controls.
+4. Review the [AWS Cloud Security Posture Review](./AWS-Cloud-security-posture-review/) for cloud evidence and remediation decisions.
 5. Finish with the [Integrated Security Generalist Capstone](./Security-generalist-capstone/) for the combined leadership view.
 
 ## Evidence and ethics statement
