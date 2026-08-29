@@ -24,9 +24,34 @@ The assessed cloud perimeter connects user actions and external SaaS platforms b
 
 ---
 
-## AWS Cloud Security Posture Assessment Report
+### Sanitized Resource Inventory
+*   **AWS-ACCOUNT-01 (Global Boundary / AST-003):** Critical account wrapper handling infrastructure processes.
+*   **S3-01 (Amazon S3 Backup / AST-005):** Storage tier currently presenting 0 active buckets (Zero storage attack surface).
+*   **CT-01 (AWS CloudTrail / AST-013):** High-criticality event history logs plane (Trails currently empty).
+*   **IAM-01 (AWS IAM Service / AST-003):** Core identity manager enforcing account-wide password policies.
 
-This report documents the architectural security posture review, technical vulnerabilities, risk scoring evaluations, and developer-ready remediation blueprints compiled for Velora Commerce GmbH's cloud infrastructure footprint.
+## Methodology
+The assessment was executed as a black-box manual configuration review driven by five core activities: launching read-only CLI scripts (`collect-read-only-evidence.sh`), evaluating controls against a five-tier status model (Passed, Failed, Manual Review, N/A, Not Reviewed), scoring gaps via an inherent 5x5 matrix, assigning proposed remediation paths, and mapping positive/negative test scripts.
+
+## Account and Cost Safeguards
+*   **Root Protection Posture:** Passed. Root MFA is enabled via a hardware FIDO2 key, zero active root access keys exist, and zero routine administrative actions originate from the root user.
+*   **Cost and Budget Controls:** Passed. A custom monthly billing alert threshold budget is configured at a 20 USD limit, and AWS Free Tier usage alerts are actively verified.
+*   **Identity Entry Posture:** Failed. Human administrative operations currently rely on long-lived programmatic access keys rather than short-lived federated sessions.
+*   **Privacy Guardrails:** Passed. All raw telemetry outputs are piped exclusively into un-tracked directories protected by `.gitignore` rules.
+
+## IAM Review
+The identity review evaluated users (`users.json`), roles (`roles.json`), and password rules (`password-policy.json`). Identity `ID-01` (`AWS-accessor`) is successfully restricted to the read-only `SecurityAudit` policy, and role `ROLE-01` implements a restricted trust policy bounded strictly to the `://amazonaws.com` service principal. However, Access Analyzer checks (`access-analyzers.json`) confirmed that no account-level external-access analyzer is active in the region, creating a visibility gap. Offline policy validation testing cleanly flagged wildcard administrative risks with a `SECURITY_WARNING` code on test files.
+
+## S3 Review
+Account-level public access protections passed inspection, confirming that `BlockPublicAcls`, `IgnorePublicAcls`, `BlockPublicPolicy`, and `RestrictPublicBuckets` are all set to `True` globally. A granular review of the storage tier confirmed that the account contains **0 active S3 buckets**. As a result, individual bucket checks for encryption, versioning, server access logging, and transport security are classified as **Not Applicable (N/A)** for this audit cycle, resulting in an empty storage attack surface.
+
+## CloudTrail and Monitoring Review
+The assessment distinguishes between default **CloudTrail Event History** and persistent **CloudTrail Trails**. While the account has default, 90-day regional Event History active, it contains **zero active long-term trails**. This creates a critical forensic blind spot, as no long-term logs are retained, log file validation signatures are disabled, and no events are forwarded to the central SIEM. Real-time alerting for critical P1 administrative events is completely missing.
+
+
+---
+
+## Findings
 
 
 ## AWS-SEC-001: Long-Lived Programmatic IAM Access Keys
