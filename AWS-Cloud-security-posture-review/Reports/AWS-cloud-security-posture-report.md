@@ -131,4 +131,52 @@ An advanced persistent threat actor could compromise an identity within the tena
 - **Cost Consideration:** AWS provides the first copy of management events delivered to an S3 bucket at **zero service cost**. *Cost Guardrail:* To prevent high storage bills, explicitly leave data events (such as S3 object-level logs) **disabled** until an approved executive budget allocation is signed off.
 
 ### Verification
+The finding will be closed when a local `trails.json` metadata dump confirms that a trail is present with `IsMultiRegionTrail` and `LogFileValidationEnabled` parameters both evaluating as `true`.
 
+### Status
+Open
+
+---
+
+## AWS-SEC-004: Missing High-Risk Event Alerting Matrix
+
+### Severity
+High (Risk Score: 12 / Formula: $3 \times 4$)
+
+### Affected Resource
+- **Resource Alias:** `CT-01`
+- **Asset ID:** AST-014 (Hosted Splunk SIEM Ingestion Destination)
+- **Data Classification:** Confidential
+- **Business Purpose:** Central security operations monitoring dashboard managing real-time threat detection.
+
+### Observation
+A manual review of the environment's monitoring configuration confirmed that no automated alerts, repeatable notification triggers, or manual review procedures are active to flag high-risk management changes. Security and administrative events remain completely un-monitored unless an analyst manually queries the logs.
+
+### Evidence
+- **Source:** Console-Review / Monitoring Architecture Audit
+- **Review Date:** 2026-08-29
+- **Evidence Label:** Observed / Mapped to Simulated Velora business impact.
+- **Sanitized Reference:** No Amazon SNS topics, CloudWatch metric filters, or Splunk alerting rules are mapped to administrative API events.
+
+### Risk Scenario
+A threat actor or rogue employee could compromise an identity and execute critical control-plane mutations—such as creating permanent access keys, attaching administrative policies to standard users, or deleting security trails. Because there are no real-time alerting triggers or structured review cadences, these dangerous changes would go completely unnoticed, letting the attacker expand their privileges and maintain persistence indefinitely.
+
+### Existing Controls
+None. Infrastructure changes depend entirely on manual, ad-hoc log searches during an active investigation or incident triage window.
+
+### Recommendation
+1. **Immediate Safe Action:** Establish a temporary manual fallback review cadence where a security analyst manually reviews the primary region's management logs at the close of each business day.
+2. **Durable Control:** Implement a prioritized high-risk event alert matrix within your log aggregator or SIEM (Hosted Splunk). Configure immediate alerts for critical P1 events, including Root console logins, `StopLogging` calls, `PutBucketPolicy` updates, and `CreateAccessKey` actions.
+3. **Ownership and Review:** The Security Lead assumes ownership of detection engineering and alert tuning. Incident response playbooks must be written to handle each alert category within defined SLA response windows.
+
+### Change Safety
+- **Dependency Check:** Alerting and monitoring architectures run out-of-band and introduce zero downtime risks to live production systems.
+- **Backup or Recovery Consideration:** N/A (Does not modify or delete active infrastructure assets).
+- **Rollback Plan:** Alerting parameters can be paused or tuned down inside the SIEM console to prevent alert fatigue if false positives spike.
+- **Cost Consideration:** CloudWatch metrics and SIEM alerts incur variable data-volume ingestion fees. The rules must be tightly bounded to monitor only specific P1/P2 management event names to keep costs low.
+
+### Verification
+The finding will be closed when a non-destructive test event (such as an authorized, simulated read-only policy check) successfully triggers an automated security notification that reaches the designated security owner within SLA thresholds.
+
+### Status
+Open
