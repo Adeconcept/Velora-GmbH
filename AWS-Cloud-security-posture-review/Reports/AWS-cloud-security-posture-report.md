@@ -180,3 +180,58 @@ The finding will be closed when a non-destructive test event (such as an authori
 
 ### Status
 Open
+
+---
+
+
+## 1. Posture Verification Retest Plan
+
+Because the infrastructure assessment was executed against a live AWS cloud environment, all structural remediation configurations remain in a **Proposed** state pending formal change-window approvals. No findings have been falsely marked closed.
+
+### 1.1 Targeted Posture Validation Retest Scripts
+*   **Finding AWS-SEC-001 (Long-Lived Keys):** Authenticate using the newly provisioned temporary federated session configuration (`aws sso login --profile velora-audit`), confirm active token generation via `aws sts get-caller-identity`, and verify that the old programmatic keys register as inactive or deleted inside the global credential report.
+*   **Finding AWS-SEC-002 (Missing Access Analyzer):** Re-run the `aws accessanalyzer list-analyzers --type ACCOUNT` query and verify that the regional analyzer registers an active status.
+*   **Finding AWS-SEC-003 (Missing CloudTrail Trail):** Re-run the `aws cloudtrail describe-trails` and `get-trail-status` command lines to verify multi-region tracking, global service event capture, and log file integrity validation flags.
+*   **Finding AWS-SEC-004 (Missing Alerting Matrix):** Generate an approved, benign high-risk management action (such as an offline custom policy check) and confirm that an automated alert successfully logs, formats, and routes to the security owner within SLA thresholds.
+
+### 1.2 Definitive Governance Posture Closure States
+*   **Remediated:** Configuration modifications have been successfully written to the cloud environment, but final independent security validation and automated retest verification remain incomplete.
+*   **Closed:** The security control is fully implemented, verified, and the defined retest scripts passed successfully.
+*   **Risk Accepted:** The accountable corporate business risk owner has formally signed a time-limited tracking exception with active compensating controls.
+*   **Not Fixed:** The security configuration gap remains open, unmitigated, and is actively logged on the infrastructure tracking ledger.
+
+---
+
+## 2. Program Performance & Cloud Posture Metrics
+
+The following program metrics summarize the quantitative results, compliance levels, and risk-reduction targets derived during this AWS review window.
+
+### 2.1 Program Velocity Performance Rates
+*   **Review Coverage Rate: 100%**
+    $$\text{Review Coverage} = \frac{10 \text{ Reviewed Applicable Checks}}{10 \text{ Total Applicable Checks}} \times 100 = 100\%$$
+*   **Account Compliance Pass Rate: 60%**
+    $$\text{Pass Rate} = \frac{6 \text{ Passed Checks}}{10 \text{ Reviewed Applicable Checks}} \times 100 = 60\%$$
+    *(Note: Passed Checks count reflects 5 passed account controls + 1 passed global S3 account-level block. Unused S3 bucket controls are excluded from the denominator to prevent data skew).*
+*   **Evidence-Backed Finding Rate: 100%**
+    $$\text{Evidence-Backed Finding Rate} = \frac{4 \text{ Findings with Valid Evidence}}{4 \text{ Total Findings}} \times 100 = 100\%$$
+*   **Remediation Closure Rate: 0%**
+    $$\text{Remediation Closure Rate} = \frac{0 \text{ Closed Findings}}{4 \text{ Findings Selected for Remediation}} \times 100 = 0\%$$
+*   **Critical and High Ownership Rate: 100%**
+    $$\text{Critical and High Ownership} = \frac{3 \text{ High Findings with Owner \& Target Date}}{3 \text{ Total Critical and High Findings}} \times 100 = 100\%$$
+*   **Target Quantitative Risk Reduction: 37**
+    $$\text{Target Risk Reduction} = 51 \text{ (Total Inherent Scores)} - 14 \text{ (Target Residual Risk Scores)} = 37$$
+
+### 2.2 Control Results Distribution by Domain Matrix
+*   **Review Assessment Date:** 2026-08-29
+*   **Total Control Items Checked:** 17
+
+| Control Domain | Passed | Failed | Manual Review | Not Applicable | Not Reviewed |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Account Safeguards** | 5 | 0 | 0 | 0 | 0 |
+| **IAM Identity Management** | 0 | 1 | 0 | 0 | 0 |
+| **S3 Storage Security** | 1 | 0 | 0 | 7 | 0 |
+| **CloudTrail Logging** | 0 | 1 | 0 | 0 | 0 |
+| **Monitoring & Cost Controls** | 0 | 2 | 0 | 0 | 0 |
+
+*(Note: The data from this distribution matrix is charted visually inside the enterprise dashboard sheet at `evidence/screenshots/control-results-by-domain.png` using a grouped column configuration).*
+
