@@ -40,7 +40,7 @@ This log lists the authoritative design, risk management, and cloud safety choic
 
 ### Security Monitoring Service Governance Matrix
 
-| Service | Primary Security Value | Cost Consideration Bounds | Week 23 Operational Decision |
+| Service | Primary Security Value | Cost Consideration Bounds | Operational Decision |
 | :--- | :--- | :--- | :--- |
 | **Security Hub** | Aggregated compliance posture controls, CIS benchmark mapping, and centralized finding dashboards. | Standard free-trial windows may end and resource-based checking charges will begin automatically. | **Review pricing; optional and not required.** Do not activate for routine lab tracking. |
 | **GuardDuty** | Managed continuous threat detection, intelligent machine learning anomaly tracking, and malicious IP alerting. | Trial periods may expire and variable network/data-volume processing charges will begin. | **Review pricing; optional and not required.** Relies on baseline CloudTrail analysis fallback instead. |
