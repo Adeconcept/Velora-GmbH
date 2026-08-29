@@ -1,4 +1,4 @@
 Control_ID,Scope_Target,Baseline_State,Harden_Action,Post_Remediation_State,Verification_Method,Evidence_Label
-SAF-001,Root-MFA,Unverified,Register FIDO2 Hardware Key,Active,IAM Dashboard Verification,Simulated
+SAF-001,Root-MFA,Present,Passkey,Active,IAM Dashboard Verification,Simulated
 SAF-002,Root-Access-Keys,Present,Deactivate and Delete Key Strings,None,Credential Report Lookup,Simulated
 SAF-003,Security-Contact,Empty,Map Secure Operational Alias,Configured,Account Settings Review,Simulated
