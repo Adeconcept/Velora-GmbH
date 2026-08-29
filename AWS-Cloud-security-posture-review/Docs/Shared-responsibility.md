@@ -2,7 +2,7 @@
 
 This document defines the clear operational demarcations between the cloud infrastructure provider (AWS) and the customer tenant (Velora Commerce GmbH) across the current assessment parameters.
 
-| Architectural Layer | AWS Shared Responsibilities | Customer Operational Responsibilities | Week 23 Posture Verification Check |
+| Architectural Layer | AWS Shared Responsibilities | Customer Operational Responsibilities | Velora Posture Verification Check |
 | :--- | :--- | :--- | :--- |
 | **Physical Facilities & Hardware** | Protect data center availability, secure bare-metal server configurations, and maintain physical environmental perimeters. | Select context-appropriate deployment regions and explicitly understand inherited infrastructure controls. | Documented, not tested. |
 | **Managed Control Plane** | Operate virtualization hypervisors, manage API routing architectures, and patch underlying utility operating systems. | Configure corporate user identities, implement strong IAM policies, toggle global logging engines, and enforce data encryption rules. | IAM identity checks and multi-region CloudTrail auditing tracks. |
