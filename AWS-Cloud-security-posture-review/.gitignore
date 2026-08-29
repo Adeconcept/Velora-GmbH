@@ -1,0 +1,15 @@
+# Raw AWS evidence and credentials must never enter Git
+private-evidence/
+*.pem
+*.key
+*.p12
+*.tfstate
+*.tfstate.*
+.aws/
+.env
+.env.*
+
+# Local exports that may contain identifiers
+*-raw.json
+credential-report.csv
+cloudtrail-events.json
