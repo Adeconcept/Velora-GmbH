@@ -1,4 +1,0 @@
-Plugin_ID,Severity,Title,CVE,Port,Protocol,Host_Label,First_Observed,Scanner_Evidence_Summary,Evidence_Label
-10114,Low,"ICMP Timestamp Request Remote Date Disclosure",CVE-1999-0524,0,icmp,LAB-UBU-01,2026-08-27,"The remote host responded to an ICMP timestamp request.","EV-A01-ICMP-TIME"
-10222,Info,"SSH Server Type and Version Information",,22,tcp,LAB-UBU-01,2026-08-27,"SSH version banner extracted from open port.","EV-A02-SSH-VER"
-19506,Info,"Nessus Scan Information",,0,udp,LAB-UBU-01,2026-08-27,"Credentialed checks : no / Scan type : External","EV-A03-SCAN-INFO"

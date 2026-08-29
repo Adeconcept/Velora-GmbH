@@ -1,7 +1,0 @@
-Plugin_ID,Severity,Title,CVE,Port,Protocol,Host_Label,First_Observed,Scanner_Evidence_Summary,Evidence_Label
-10222,Info,"SSH Server Type and Version Information",,22,tcp,LAB-UBU-01,2026-08-27,"SSH version string: OpenSSH detected on port 22.","EV-C01-SSH-BANNER"
-14272,Info,"Netstat Portscanner (SSH)",,0,tcp,LAB-UBU-01,2026-08-27,"Successfully verified active listening ports via netstat under authenticated session.","EV-C02-NETSTAT-PORT"
-19506,Info,"Nessus Scan Information",,0,udp,LAB-UBU-01,2026-08-27,"Credentialed checks : yes, as 'nessus-audit' via ssh / Scan type : Local","EV-C03-SCAN-METADATA"
-11936,Info,"OS Identification",,0,tcp,LAB-UBU-01,2026-08-27,"Operating system verified via local /etc/os-release mapping.","EV-C04-OS-VER"
-34220,Info,"Netstat Active Connections Enumerate",,0,tcp,LAB-UBU-01,2026-08-27,"Internal connection map validated post-remediation.","EV-C05-CONN-ENUM"
-10031,Info,"Curl Information Detection",,0,tcp,LAB-UBU-01,2026-08-27,"Local Curl binary path confirmed via unprivileged lookup.","EV-C06-CURL-DET"
