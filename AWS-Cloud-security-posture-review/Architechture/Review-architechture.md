@@ -1,3 +1,6 @@
+# Architecture Review
+
+```mermaid
 flowchart TD
     A["Analyst on MacBook M1"]
     SSO["Temporary or federated AWS session"]
@@ -22,6 +25,6 @@ flowchart TD
     CT --> RAW
     MON --> RAW
     RAW -->|"Manual review and redaction"| PUB
+```
 
-
-    > The assessment collects configuration evidence through an authorized identity. Raw output remains local. Only redacted summaries and screenshots enter the portfolio repository.
+The assessment collects configuration evidence through an authorized identity. Raw output remains local. Only redacted summaries and screenshots enter the portfolio repository.
