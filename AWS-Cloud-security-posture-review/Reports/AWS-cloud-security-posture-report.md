@@ -1,6 +1,33 @@
-# AWS Cloud Security Posture Assessment Report
+# AWS Cloud Security Posture Review
+
+## Executive Summary
+This cloud infrastructure security posture review evaluates the security control plane of an authorized personal AWS learning account. The assessment processed **10** total applicable checks across core identity boundaries, object storage perimeters, cost controls, and forensic logging engines, achieving a **100% review coverage rate**. The assessment identified **6 passing controls** and **4 failed controls**, resulting in **4 open, evidence-backed findings**. Priority risks involve the use of long-lived programmatic IAM access keys and a complete absence of multi-region persistent trail logging. Remediation configurations are currently in a **Proposed** state pending formal engineering review and implementation.
+
+## Objective
+The primary objective of this review is to perform a rigorous configuration audit of the AWS cloud environment. The assessment targets five critical technical perimeters: Root account safeguards, IAM identity lifecycles, S3 storage exposure blocks, CloudTrail logging coverage, and monitoring/cost-control readiness.
+
+## Business Context
+The assessed AWS environment maps directly to Velora Commerce GmbH's simulated critical cloud architecture (**AST-003**), located in region `eu-central-1`. This cloud perimeter hosts the customer web application interface (**AST-001** / **AST-004**) and protects critical relational database repositories (**AST-002** / **AST-005**) that contain **Restricted** customer profile data (**DAT-001**) and order transaction metadata (**DAT-002**). This audit ensures that our technical configurations prevent data breaches, cost overruns, or forensic log manipulation.
+
+## Scope and Authorization
+*   **Authorized Services:** AWS IAM, Amazon S3, AWS CloudTrail, AWS STS, and AWS Budgets.
+*   **Review Regions:** Deployed global settings alongside a targeted region review inside `eu-central-1`.
+*   **Permitted Actions:** Restricted strictly to read-only configuration inspections, credential report harvesting, and offline policy validations.
+*   **Exclusions:** Active penetration testing, brute-force access attempts, resource exploitation, denial-of-service simulations, and the creation of live public resources were explicitly out of scope.
+*   **Evidence Boundary:** All raw AWS CLI JSON metadata files and raw CSV credential outputs remain exclusively offline within the local `private-evidence/` folder tree, safely hidden from the public Git history.
+
+## Shared Responsibility
+Per the AWS Shared Responsibility Model, AWS maintains the physical hardware infrastructure, bare-metal hypervisors, and core global networking fabrics. Velora retains complete operational accountability for configuration boundaries *in* the cloud, specifically: provisioning least-privilege identity policies, managing data encryption at rest, configuring public access blocks, and deploying persistent multi-region trail monitoring architectures.
+
+## Environment and Architecture
+The assessed cloud perimeter connects user actions and external SaaS platforms back to core compute and data layers:
+
+---
+
+## AWS Cloud Security Posture Assessment Report
 
 This report documents the architectural security posture review, technical vulnerabilities, risk scoring evaluations, and developer-ready remediation blueprints compiled for Velora Commerce GmbH's cloud infrastructure footprint.
+
 
 ## AWS-SEC-001: Long-Lived Programmatic IAM Access Keys
 
