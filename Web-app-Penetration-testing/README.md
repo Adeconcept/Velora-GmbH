@@ -17,6 +17,25 @@ Velora's fictional customer application supports storefront, account, and admini
 - Prioritize findings using documented likelihood and impact.
 - Give developers root-cause fixes and testable acceptance criteria.
 
+---
+
+## Engineering Remediation & Secure UX Fixes
+
+Finding vulnerabilities using Burp Suite is only half the battle. As a security professional with a background in Product Design, I analyzed the root causes of these OWASP top 10 flaws and designed user-centric, secure remediation paths:
+### Fixing insecure direct object references (IDOR):
+- The Flaw: Changing a user ID parameter in the URL (e.g., account?id=1001 to id=1002) allowed access to another user's private dashboard.
+- Secure UX Remediation: On the backend, enforce strict object-level authorization tokens. On the frontend interface, remove sequential, predictable user IDs from the URL entirely. Use clean, human-readable slug paths (e.g., /dashboard/settings) so malicious actors cannot easily guess or manipulate parameter boundaries via the browser interface.
+
+### Mitigating broken Authentication (Session Timeout UX):
+- The Flaw: Sensitive banking/SaaS accounts remained logged in indefinitely on public or shared computers because session tokens never expired.
+- Secure UX Remediation: Implement an automatic 15-minute inactivity timeout. However, to prevent data loss and user frustration, deploy a subtle, low-friction countdown modal 60 seconds before expiration: "For your security, you will be logged out in 60 seconds. [Keep Me Logged In]". Clicking the button securely refreshes the token via an authenticated API call without breaking the user's active flow.
+
+### Defending against Cross-Site Scripting (XSS) via safe inputs:
+- The Flaw: Attackers injected malicious scripts into comment boxes because input validation was missing.
+- Secure UX Remediation: Pair strict backend input encoding with real-time frontend field validation. Use micro-copy and placeholder text that explicitly guides the user on expected inputs (e.g., "Letters and numbers only"). If they attempt to paste unexpected special characters, dynamically disable the submit button and display a clear, helpful error message rather than letting the payload execute.
+
+---
+
 ## Environment
 - MacBook M1 scanner host
 - Burp Suite Community Edition
